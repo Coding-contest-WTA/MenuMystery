@@ -1,0 +1,32 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.3
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=admin_db
+    volumes:
+      - ./build/db/01-init-table.up.ddl.sql:/docker-entrypoint-initdb.d/01-init-table.up.ddl.sql
+      - ./build/db/02-data.up.dml.sql:/docker-entrypoint-initdb.d/02-data.up.dml.sql
+    expose:
+      - "5432"
+
+  app-back:
+    build:
+      context: .
+      dockerfile: build/back/Dockerfile
+    volumes:
+      - ./back/:/app
+    ports:
+      - "8002:5000"
+    depends_on:
+      - postgres
+
+  app-front:
+    image: nginx:latest
+    volumes:
+      - ./front/:/usr/share/nginx/html
+    ports:
+      - "80:80"
+    restart: always

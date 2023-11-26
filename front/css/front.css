@@ -1,0 +1,305 @@
+/*contenu*/
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('../assets/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+#page-content {
+    min-height: 80%;
+    padding-bottom: 100px;
+}
+
+/*filtres*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 700px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+#filter-dropdown {
+    right: 0;
+    left: auto;
+}
+.dropdown-content label {
+    display: inline-block;
+    margin: 5px;
+    font-size: 30px;
+}
+#filter-button {
+    margin-left: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/*navigation*/
+#header {
+    background-color: #FBE8FC;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+#header img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: auto;
+}
+#connexion {
+    background: none;
+    border: none;
+    padding: 10;
+    margin: 10px;
+}
+#connexion img {
+    max-width: 100px;
+    max-height: 50px;
+}
+#logoutButton {
+    background: none;
+    border: none;
+    padding: 10;
+    margin: 10px;
+}
+#logoutButton img {
+    max-width: 100px;
+    max-height: 50px;
+}
+#middle-text {
+    color: black;
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    flex: 1;
+    border: 2px solid black;
+    padding: 5px;
+    display: inline-block;
+    background-color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-left: -10px;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+}
+
+.restaurant-image-container {
+    flex: 1;
+    padding: 10px;
+}
+
+.text-container {
+    flex: 2;
+    padding: 10px;
+}
+
+/*footer*/
+#footer {
+    position: fixed;
+    bottom: 45%;
+    right: 50%;
+    width: auto;
+    text-align: right;
+    padding: 10px 0;
+    height: 35%;
+    background: transparent;
+    z-index: 2;
+    transition: all 0.5s ease
+}
+#footer p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+#footer img {
+    display: block;
+    margin: 5px 0;
+    border: 4mm ridge rgba(79, 43, 16, .6);
+    border-radius: 25px;
+    --stripe: 7px;
+    background: repeating-linear-gradient(45deg, #3a5035 0 var(--stripe), #30482b var(--stripe) calc(var(--stripe) * 2))
+}
+#bd_footer {
+    position: fixed;
+    bottom: 20px;
+    right: 7%;
+    height: 15%;
+    max-width: calc(100% - 120px);
+    z-index: 1;
+}
+@keyframes fadein {
+    0% { opacity: 0; }
+    30% { opacity: 0.3; }
+    60% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+.large-button1 {
+    height: 28%;
+    right: 25%;
+    cursor: pointer;
+    position: relative;
+    top: 0%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: fadein 0.3s ease 0.3s forwards;
+}
+.large-button2 {
+    height: 28%;
+    right: -135%;
+    cursor: pointer;
+    position: relative;
+    top: 3%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: fadein 0.3s ease 0.3s forwards;
+}
+.large-button3 {
+    height: 28%;
+    right: 25%;
+    cursor: pointer;
+    position: relative;
+    top: 8%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: fadein 0.3s ease 0.3s forwards;
+}
+.large-button4 {
+    height: 28%;
+    right: -135%;
+    cursor: pointer;
+    position: relative;
+    top: 13%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: fadein 0.3s ease 0.3s forwards;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 0;
+}
+
+/*cartes*/
+.card {
+    display: flex;
+    margin: 20px;
+    border-radius: 10px;
+}
+.restaurant-image {
+    margin: 10px;
+    width : 20%;
+    border-radius: 10px;
+}
+
+/*barre de recherche*/
+#search-bar {
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 83%;
+    height: 60px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+#search-input {
+    flex: 1;
+    border: none;
+    padding: 5px;
+}
+#search-button {
+    border: none;
+    background-color: #BBC9CD;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+#container_playlists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+#text_page_playlists {
+    border: 2px solid black;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+#create_lists {
+    border: 2px solid black;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+/* gashapon */
+#imageFrame {
+    width: 100%;
+    overflow: hidden;
+    height: 80%;
+}
+#displayedImage {
+    width: 100%;
+    height: 80%;
+    display: block;
+    margin: 0 auto;
+}
+#returnButton {
+    position: relative;
+    width: 20%;
+}
+
+#returnButton::before {
+    content: '\2190';
+    margin-right: 5px;
+}
+#header_gasha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 20%;
+}
+#middle-text_gasha {
+    flex: 1;
+    text-align: center;
+}
+.title-text_gasha {
+    color: black;
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 50px;
+    flex: 1;
+    border: 2px solid black;
+    padding: 5px;
+    display: inline-block;
+    background-color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-left: -60px;
+}

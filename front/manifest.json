@@ -1,0 +1,16 @@
+{
+  "name": "Menu-Mystery",
+  "short_name": "Menu-Mystery",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3498db",
+  "icons": [
+    {
+      "src": "assets/images/icon.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose":"any"
+    }
+  ]
+}

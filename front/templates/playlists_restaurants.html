@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu-Mystery</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/front.css">
+    <link rel="stylesheet" href="css/foodlist.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div id="container_playlists">
+        <div id="text_page_playlists">
+            Connectez-vous pour accéder à vos foodlists
+        </div>
+    </div>
+
+    <!-- Modal for creating a foodlist -->
+    <div id="createFoodListModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Créer une nouvelle liste de restaurants</h2>
+            <form>
+                <label for="foodlistName">Nom de la liste :</label>
+                <input type="text" id="foodlistName" name="foodlistName" required>
+
+                <div id="restaurantCheckboxes">
+                    <!-- Restaurants checkboxes will be filled dynamically -->
+                </div>
+
+                <button type="button" onclick="createFoodList()">Créer</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Button to open the modal -->
+    <button id="modalCreationButton" onclick="openModal()">Créer une nouvelle liste</button>
+
+
+    <div id="foodlist_list" style="overflow:scroll;width:100%;height:1600px;"></div> <!--TODO: Pas ouf de coder en dur la taille, pb avec le footer ? "%" ne marche pas-->
+
+</body>
+
+<script src="js/foodlist.js"></script>
+
+</html>
