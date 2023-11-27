@@ -59,7 +59,7 @@ function formatHours(opening, closure) {
 }
 
 function getBackgroundColor(index) {
-    return index % 3 === 0 ? "#E7FBE1" : (index % 3 === 1 ? "#F5F5F5" : "#FBE8FC");
+    return index % 3 === 0 ? "#d1f8c5" : (index % 3 === 1 ? "#fbf9e2" : "#f7dbf2"); // E7FBE1 F5F5F5 FBE8FC
 }
 
 $.ajax({

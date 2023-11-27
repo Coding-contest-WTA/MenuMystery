@@ -26,6 +26,8 @@ body {
     background-color: #f9f9f9;
     min-width: 700px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding : 15px 25px;
+    border-radius: 10px;
     z-index: 1;
 }
 #filter-dropdown {
@@ -47,10 +49,11 @@ body {
 
 /*navigation*/
 #header {
-    background-color: #FBE8FC;
+    background-color: #f7dbf2; /*#FBE8FC;*/
     padding: 20px;
     display: flex;
     align-items: center;
+    border-bottom: solid 10px rgba(234, 196, 238,1);
 }
 #header img {
     max-width: 200px;
@@ -134,8 +137,8 @@ body {
 }
 #bd_footer {
     position: fixed;
-    bottom: 20px;
-    right: 7%;
+    bottom: 0px;
+    right: 2%;
     height: 15%;
     max-width: calc(100% - 120px);
     z-index: 1;
@@ -200,8 +203,11 @@ body {
 /*cartes*/
 .card {
     display: flex;
-    margin: 20px;
-    border-radius: 10px;
+    margin: 50px 20px;
+    padding : 20px 5px;
+    border-radius: 40px;
+    box-shadow: 12px 12px 5px rgba(234, 224, 236,0.8);
+    /*border: solid 1px white;/*rgba( 228, 202, 228,0.8);*/
 }
 .restaurant-image {
     margin: 10px;
