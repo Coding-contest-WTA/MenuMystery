@@ -78,6 +78,23 @@ def before_request():
     if auth_result:
         return auth_result
 
+@app.route('/food/choose', methods=["GET"])
+def type_food_choose():
+    db = get_db()
+    cursor = db.cursor()
+
+    query = '''
+    SELECT type, category FROM type_food ORDER BY RANDOM() LIMIT 1;
+    '''
+    cursor.execute(query)
+    rows = cursor.fetchall()
+
+    # Close the cursor, as you're done with it
+    cursor.close()
+    data = [dict(zip([column[0] for column in cursor.description], row)) for row in rows]
+
+    return jsonify(data)
+
 @app.route('/restaurants', methods=["GET"])
 def restaurants_list():
     db = get_db()
@@ -101,6 +118,7 @@ def restaurants_list():
     '''
 
     filters = []
+    params = []
     typeArgs = request.args.getlist('type')
     priceArgs = request.args.getlist('price')
     establishmentName = request.args.get('establishment_name')
@@ -108,18 +126,20 @@ def restaurants_list():
     if typeArgs:
         type_filters = [f"tf.type IN ({', '.join(['%s']*len(typeArgs))})"]
         filters.extend(type_filters)
+        params.extend(typeArgs)
 
     if priceArgs:
         price_filters = [f"r.price IN ({', '.join(['%s']*len(priceArgs))})"]
         filters.extend(price_filters)
+        params.extend(priceArgs)
 
     if establishmentName:
         filters.append("e.nom LIKE %s")
+        params.append(f"%{establishmentName}%")
 
     if filters:
         query += " WHERE " + " AND ".join(filters)
 
-    params = typeArgs + priceArgs + [f"%{establishmentName}%"]
     cursor.execute(query, params)
     rows = cursor.fetchall()
 

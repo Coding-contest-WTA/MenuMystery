@@ -47,5 +47,6 @@ returnButton.addEventListener('click', function () {
         $('#overlay').show();
         bd_footer.style.height = "29%";
     });
+
 });
 
