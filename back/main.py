@@ -86,7 +86,7 @@ def restaurants_list():
     cursor = db.cursor()
 
     query = '''
-    SELECT 
+    SELECT DISTINCT
     r.restaurant_id,
     e.establishment_id,
     r.name, 
@@ -98,20 +98,22 @@ def restaurants_list():
     e.closure as establishment_closure
     FROM restaurant as r
     INNER JOIN establishment as e ON e.restaurant_id = r.restaurant_id
-    LEFT JOIN food_to_restaurant as ftr ON r.restaurand_id = ftr.restaurand_id
+    LEFT JOIN food_to_restaurant as ftr ON r.restaurant_id = ftr.restaurant_id
     LEFT JOIN type_food as tf ON tf.type_food_id = ftr.type_food_id
     '''
 
     filters = []
-    typeArgs = request.args.get('type')
-    priceArgs = request.args.get('price')
+    typeArgs = request.args.getlist('type')
+    priceArgs = request.args.getlist('price')
     # Add more filters as needed
 
     if typeArgs:
-        filters.append(f"tf.type = '{typeArgs}'")
+        type_filters = [f"tf.type = '{t}'" for t in typeArgs]
+        filters.extend(type_filters)
 
     if priceArgs:
-        filters.append(f"r.price = {priceArgs}")
+        price_filters = [f"r.price = {p}" for p in priceArgs]
+        filters.extend(price_filters)
 
     if filters:
         query += " WHERE " + " AND ".join(filters)
