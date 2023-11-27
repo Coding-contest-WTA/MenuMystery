@@ -26,6 +26,24 @@ function handleImageClick() {
         setTimeout(() => {
             changeImage = true;
         }, 3000);
+
+        $.ajax({
+        type: "GET",
+        url: config.apiUrl + "/food/choose",
+        dataType: "json",
+        success: function (data) {
+            if (data && data.length > 0) {
+                document.getElementById("displayTypeText").innerText = data[0].type;
+            } else {
+                console.log("Aucune donnée à afficher");
+            }
+        },
+        error: function (data) {
+            console.error("Erreur lors de la requête AJAX : " + data);
+            $("#errorMessage").text("Erreur : " + data.statusText);
+        },
+    });
+
     }
 }
 
@@ -50,3 +68,16 @@ returnButton.addEventListener('click', function () {
 
 });
 
+function redirectAndDisplayRestaurants(){
+    const type = document.getElementById("displayTypeText").innerText;
+    $('#page-content').load('templates/fiche_restaurants.html', function () {
+        imgElement.onclick = handleImageClick;
+        $('#header, #footer, #bd_footer, #search-container, .large-button1, .large-button2, .large-button3, .large-button4').show();
+        $('#overlay').show();
+        bd_footer.style.height = "29%";
+
+        url = config.apiUrl + "/restaurants?type=" + type
+        displayRestaurant(url)
+
+    });
+}

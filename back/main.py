@@ -66,7 +66,7 @@ def basic_auth_middleware():
 @app.before_request
 def before_request():
     # Exclude the '/' and '/signup' endpoints from the middleware
-    if request.endpoint in ['restaurants_list', 'signup']:
+    if request.endpoint in ['restaurants_list', 'signup', 'type_food_choose']:
         return None
     if request.method == "OPTIONS":
         return None
