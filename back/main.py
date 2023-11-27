@@ -98,7 +98,24 @@ def restaurants_list():
     e.closure as establishment_closure
     FROM restaurant as r
     INNER JOIN establishment as e ON e.restaurant_id = r.restaurant_id
+    LEFT JOIN food_to_restaurant as ftr ON r.restaurand_id = ftr.restaurand_id
+    LEFT JOIN type_food as tf ON tf.type_food_id = ftr.type_food_id
     '''
+
+    filters = []
+    typeArgs = request.args.get('type')
+    priceArgs = request.args.get('price')
+    # Add more filters as needed
+
+    if typeArgs:
+        filters.append(f"tf.type = '{typeArgs}'")
+
+    if priceArgs:
+        filters.append(f"r.price = {priceArgs}")
+
+    if filters:
+        query += " WHERE " + " AND ".join(filters)
+
     cursor.execute(query)
     rows = cursor.fetchall()
 

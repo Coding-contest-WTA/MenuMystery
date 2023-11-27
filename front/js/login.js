@@ -52,7 +52,7 @@ function login() {
             sessionStorage.setItem("user_id", data.user_id);
             sessionStorage.setItem("authorization", base64Credentials)
 
-            closeModal()
+            closeAuthModal()
             cleanInputLog();
 
             toggleButtonConnexion();
@@ -83,7 +83,7 @@ function signup() {
             sessionStorage.setItem("user_id", data.user_id);
             sessionStorage.setItem("authorization", base64Credentials)
 
-            closeModal()
+            closeAuthModal();
             cleanInputLog();
             toggleButtonConnexion();
         },
@@ -102,9 +102,8 @@ function openAuthModal() {
 }
 
 // Function to close the modal
-function closeModal() {
+function closeAuthModal() {
     const authModal = document.getElementById('authModal');
-
     authModal.style.display = 'none';
 }
 

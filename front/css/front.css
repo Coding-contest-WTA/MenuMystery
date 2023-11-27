@@ -23,10 +23,14 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
     min-width: 700px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    padding : 15px 25px;
+    border: 4mm ridge rgba(79, 43, 16, .6);
+    border-radius: 25px;
+    --stripe: 7px;
+    background: repeating-linear-gradient(45deg, #3a5035 0 var(--stripe), #30482b var(--stripe) calc(var(--stripe) * 2));
+    z-index: 2;
+    top: 120px;
 }
 #filter-dropdown {
     right: 0;
@@ -36,6 +40,16 @@ body {
     display: inline-block;
     margin: 5px;
     font-size: 30px;
+    flex: 25%;
+}
+.dropdown-content strong {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.dropdown-content img {
+    display: inline-block;
+    margin-left: 10px;
 }
 #filter-button {
     margin-left: 5px;
@@ -43,14 +57,30 @@ body {
     border: none;
     cursor: pointer;
 }
+#filter_type_price {
+    display: block;
+    margin: 20px auto; /* Center the button horizontally with some top and bottom margin */
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 40px; /* Increase the font size */
+    background-color: #f7dbf2; /* Set a background color */
+    color: black; /* Set the text color */
+    border: none; /* Remove the button border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    font-family: 'Great Vibes', cursive;
+}
 
+#filter_type_price:hover {
+    background-color: #2980b9; /* Change background color on hover */
+}
 
 /*navigation*/
 #header {
-    background-color: #FBE8FC;
+    background-color: #f7dbf2; /*#FBE8FC;*/
     padding: 20px;
     display: flex;
     align-items: center;
+    border-bottom: solid 10px rgba(234, 196, 238,1);
 }
 #header img {
     max-width: 200px;
@@ -134,8 +164,8 @@ body {
 }
 #bd_footer {
     position: fixed;
-    bottom: 20px;
-    right: 7%;
+    bottom: 0px;
+    right: 2%;
     height: 15%;
     max-width: calc(100% - 120px);
     z-index: 1;
@@ -196,12 +226,25 @@ body {
     display: none;
     z-index: 0;
 }
+.overlay-filter {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
 
 /*cartes*/
 .card {
     display: flex;
-    margin: 20px;
-    border-radius: 10px;
+    margin: 32px 20px;
+    padding : 20px 5px;
+    border-radius: 40px;
+    box-shadow: 12px 12px 5px rgba(234, 224, 236,0.8);
+    /*border: solid 1px white;/*rgba( 228, 202, 228,0.8);*/
 }
 .restaurant-image {
     margin: 10px;

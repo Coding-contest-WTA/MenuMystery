@@ -36,9 +36,13 @@
 
         <div id="authModal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
+                <span class="close" onclick="closeAuthModal()">&times;</span>
                 <div id="loginFormContainer">
-                    <h2 style="font-size: 80px; color: white; font-family: 'Great Vibes', cursive; text-align: center;">Connexion</h2>
+                    <div style="display: flex; align-items: center; justify-content: space-between; text-align: center;">
+                        <img src="assets/images/marguerite_craie.png" alt="m" width="200" style="margin-right: 20px;">
+                        <h2 style="font-size: 80px; color: white; font-family: 'Great Vibes', cursive; margin: 0 20px;">Connexion</h2>
+                        <img src="assets/images/poulpy_craie.png" alt="p" width="200" style="margin-left: 20px;">
+                    </div><br>
                     <form id="loginForm">
                         <label for="username" style="color: white;">Nom d'utilisateur :</label>
                         <input type="text" id="username" name="username" required>
@@ -49,13 +53,17 @@
                         <br><button type="button" onclick="login()">Connexion</button>
 
                         <!-- Error message container -->
-                        <div id="signinErrorMessage" style="color: navajowhite;"></div>
+                        <br><div id="signinErrorMessage" style="color: navajowhite;"></div>
                     </form>
                     <p style="font-size: 35px; color: white;">Vous n'avez pas encore de compte ? <a href="#" onclick="switchToSignup()" style="font-size: 35px; color: deepskyblue;"> S'inscrire</a></p>
                 </div>
 
                 <div id="signupFormContainer" style="display: none;">
-                    <h2 style="font-size: 80px; color: white; font-family: 'Great Vibes', cursive; text-align: center;">Inscription</h2>
+                    <div style="display: flex; align-items: center; justify-content: space-between; text-align: center;">
+                        <img src="assets/images/marguerite_craie.png" alt="m" width="200" style="margin-right: 20px;">
+                        <h2 style="font-size: 80px; color: white; font-family: 'Great Vibes', cursive; text-align: center;">Inscription</h2>
+                        <img src="assets/images/poulpy_craie.png" alt="p" width="200" style="margin-left: 20px;">
+                    </div><br>
                     <form id="signupForm">
                         <label for="newUsername" style="color: white;">Nom d'utilisateur :</label>
                         <input type="text" id="newUsername" name="newUsername" required>
@@ -66,7 +74,7 @@
                         <br><button type="button" onclick="signup()">S'inscrire</button>
 
                         <!-- Error message container -->
-                        <div id="signupErrorMessage" style="color: navajowhite;"></div>
+                        <br><div id="signupErrorMessage" style="color: navajowhite;"></div>
                     </form>
                     <p style="font-size: 35px; color: white;">Vous avez déjà un compte ?<a href="#" onclick="switchToLogin()" style="font-size: 35px; color: deepskyblue;"> S'identifier</a></p>
                 </div>
@@ -80,28 +88,52 @@
             <button id="search-button" style="height: 30px; font-size: 30px; background: none;">🔍</button>
         </div>
         <div class="dropdown">
+             <div id="overlay-filter" class="overlay-filter"></div>
             <button id="filter-button">
                 <img src="assets/images/filters.png" alt="filtres" width="70">
             </button>
             <div id="filter-dropdown" class="dropdown-content">
                 <div>
-                    <strong style="font-size: 30px;">Type de nourriture</strong>
-                    <div>
-                        <label><input type="checkbox" id="ramenCheckbox"> Ramen</label>
-                        <label><input type="checkbox" id="sushiCheckbox"> Sushi</label>
-                        <label><input type="checkbox" id="donburiCheckbox"> Donburi</label>
+                    <span class="close" onclick="closeFilters()">&times;</span>
+                    <div style="text-align: center;">
+                        <img src="assets/images/marguerite_craie.png" alt="m" width="200">
+                        <img src="assets/images/poulpy_craie.png" alt="p" width="200">
+                    </div><br>
+                    <strong style="font-size: 50px; color: white; font-family: 'Great Vibes', cursive; text-align: center;">
+                        Type de nourriture
+                    </strong><br>
+                    <div style="font-size: 20px; color: white">
+                        <label><input type="checkbox" id="ramenCheckbox" value="Ramens"> Ramens</label>
+                        <label><input type="checkbox" id="sushiCheckbox" value="Sushis"> Sushis</label>
+                        <label><input type="checkbox" id="donburiCheckbox" value="Donburi"> Donburi</label>
+                        <label><input type="checkbox" id="sauteCheckbox" value="Sautés au wok"> Sautés au wok</label>
+                        <label><input type="checkbox" id="CurryCheckbox" value="Curry"> Curry</label>
+                        <label><input type="checkbox" id="GyozasCheckbox" value="Gyozas"> Gyozas</label>
+                        <label><input type="checkbox" id="BentosCheckbox" value="Bentos"> Bentos</label>
+                        <label><input type="checkbox" id="OkonomiyakiCheckbox" value="Okonomiyaki"> Okonomiyaki</label>
+                        <label><input type="checkbox" id="SobaCheckbox" value="Soba"> Soba</label>
+                        <label><input type="checkbox" id="UdonCheckbox" value="Udon"> Udon</label>
+                        <label><input type="checkbox" id="OmuriceCheckbox" value="Omurice"> Omurice</label>
+                        <label><input type="checkbox" id="VégétarienCheckbox" value="Végétarien"> Végétarien</label>
+                        <label><input type="checkbox" id="ThéCheckbox" value="Thé"> Thé</label>
+                        <label><input type="checkbox" id="DorayakiCheckbox" value="Dorayaki"> Dorayaki</label>
+                        <label><input type="checkbox" id="DaifukuCheckbox" value="Daifuku"> Daifuku</label>
+                        <label><input type="checkbox" id="MelonpanCheckbox" value="Melon pan"> Melon pan</label>
                     </div>
                 </div>
-                <br><br>
-                <div>
-                    <strong style="font-size: 30px;">Prix</strong>
+                <div style="font-size: 20px; color: white">
+                    <strong style="font-size: 50px; color: white; font-family: 'Great Vibes', cursive; text-align: center;">Prix</strong>
                     <div>
-                        <label><input type="checkbox" id="5-10Checkbox"> 5-10€</label>
-                        <label><input type="checkbox" id="10-20Checkbox"> 10-20€</label>
-                        <label><input type="checkbox" id="20-30Checkbox"> 20-30€</label>
-                        <label><input type="checkbox" id="50-70Checkbox"> 50-70€</label>
+                        <label><input type="checkbox" id="5-10Checkbox" value="5€ - 10€"> 5-10€</label>
+                        <label><input type="checkbox" id="10-20Checkbox" value="10€ - 20€"> 10-20€</label>
+                        <label><input type="checkbox" id="20-30Checkbox" value="20€ - 30€"> 20-30€</label>
+                        <label><input type="checkbox" id="50-70Checkbox" value="50€ - 70€"> 50-70€</label>
                     </div>
                 </div>
+                <br><br><br>
+                <button id="filter_type_price">
+                    Filtrer
+                </button>
             </div>
         </div>
     </div>
@@ -141,7 +173,7 @@
             var overlay = document.getElementById("overlay");
             var bd_footer = document.getElementById("bd_footer");
             if (footer.style.display === "none") {
-                closeModal();
+                closeAuthModal();
                 footer.style.display = "block";
                 overlay.style.display = "block";
                 bd_footer.style.height = "29%";
@@ -161,6 +193,7 @@
             }
         }
     </script>
+
 
 </body>
 
