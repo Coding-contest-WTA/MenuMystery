@@ -309,3 +309,12 @@ body {
     margin: 0 auto;
     margin-left: -60px;
 }
+
+/* Reconnaissance */
+
+#titreReco {
+    text-align:center;
+    font-family: 'Great Vibes', cursive;
+    color: #363536;
+    font-size: 50px;
+}
