@@ -56,6 +56,8 @@ function login() {
             cleanInputLog();
 
             toggleButtonConnexion();
+                $('#page-content').load('templates/playlists_restaurants.html');
+
         },
         error: function (data) {
             $("#signinErrorMessage").text("Erreur : " + data.responseJSON.message);
@@ -86,6 +88,8 @@ function signup() {
             closeAuthModal();
             cleanInputLog();
             toggleButtonConnexion();
+                $('#page-content').load('templates/playlists_restaurants.html');
+
         },
         error: function (data) {
             $("#signupErrorMessage").text("Erreur : " + data.responseJSON.message);
