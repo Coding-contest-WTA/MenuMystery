@@ -33,71 +33,22 @@ function getCheckedValues() {
     var priceCheckboxes = ["5-10Checkbox", "10-20Checkbox", "20-30Checkbox", "50-70Checkbox"];
 
     foodCheckboxes.forEach(function(checkboxId) {
-        if (document.getElementById(checkboxId).checked) {
-            foodValues.push(checkboxId.replace("Checkbox", "").toLowerCase());
+        const checkbox = document.getElementById(checkboxId)
+        if (checkbox.checked) {
+            foodValues.push(checkbox.value);
         }
     });
 
     priceCheckboxes.forEach(function(checkboxId) {
-        if (document.getElementById(checkboxId).checked) {
-            priceValues.push(checkboxId.replace("Checkbox", ""));
+        const checkbox = document.getElementById(checkboxId)
+        if (checkbox.checked) {
+            priceValues.push(checkbox.value);
         }
     });
 
     return { food: foodValues, price: priceValues };
 }
 
-function createRestaurantCard(restaurantData, index) {
-    var restaurantCard = document.createElement("div");
-    restaurantCard.className = "card restaurant-card";
-    restaurantCard.style.cssText = "background-color: " + getBackgroundColor(index) + ";";
-    var infoContainer = document.createElement("div");
-    infoContainer.className = "info-container";
-    var restaurantImageContainer = document.createElement("div");
-    restaurantImageContainer.className = "restaurant-image-container";
-    var restaurantImage = document.createElement("img");
-    restaurantImage.className = "restaurant-image";
-    restaurantImage.src = "../assets/resto_plats/restaurant" + index + ".jpg";
-    restaurantImage.style.width = "80%";
-    restaurantImageContainer.appendChild(restaurantImage);
-    var textContainer = document.createElement("div");
-    textContainer.className = "text-container";
-    var restaurantNameElement = document.createElement("h2");
-    restaurantNameElement.textContent = "Nom : " + restaurantData.establishment_name;
-    var descriptionElement = createInfoElement("Description", restaurantData.establishment_description);
-    var priceElement = createInfoElement("Prix", restaurantData.price);
-    var hoursElement = createInfoElement("Horaires", formatHours(restaurantData.establishment_opening, restaurantData.establishment_closure));
-    textContainer.appendChild(restaurantNameElement);
-    textContainer.appendChild(descriptionElement);
-    textContainer.appendChild(priceElement);
-    textContainer.appendChild(hoursElement);
-    var urlElement = document.createElement("a");
-    urlElement.href = restaurantData.url;
-    urlElement.textContent = "Site Web";
-    urlElement.style.fontSize = "20px";
-    urlElement.style.color = "blue";
-    urlElement.style.textAlign = "center";
-    textContainer.appendChild(urlElement);
-    infoContainer.appendChild(restaurantImageContainer);
-    infoContainer.appendChild(textContainer);
-    restaurantCard.appendChild(infoContainer);
-    return restaurantCard;
-}
-
-function createInfoElement(label, value) {
-    var element = document.createElement("p");
-    element.innerHTML = "<strong>" + label + ":</strong> " + value;
-    element.style.fontSize = "20px";
-    return element;
-}
-
-function formatHours(opening, closure) {
-    return opening + " - " + closure;
-}
-
-function getBackgroundColor(index) {
-    return index % 3 === 0 ? "#E7FBE1" : (index % 3 === 1 ? "#F5F5F5" : "#FBE8FC");
-}
 
 function filterAndDisplayRestaurants() {
     var checkedValues = getCheckedValues();
@@ -120,6 +71,24 @@ function filterAndDisplayRestaurants() {
         url = config.apiUrl + "/restaurants?" + queryes;
     }
 
+    displayRestaurant(url)
+}
+
+document.getElementById("filter_type_price").onclick = function () {
+    filterAndDisplayRestaurants();
+};
+
+document.getElementById("search-input").onchange = function () {
+    const url = config.apiUrl + "restaurants?establishment_name=" + this.value
+    displayRestaurant(url)
+};
+
+document.getElementById("search-button").onclick = function () {
+    const url = config.apiUrl + "restaurants?establishment_name=" + document.getElementById("search-input").value
+    displayRestaurant(url)
+}
+
+function displayRestaurant(url) {
     $.ajax({
         type: "GET",
         url: url,
@@ -146,7 +115,3 @@ function filterAndDisplayRestaurants() {
         },
     });
 }
-
-document.getElementById("filter_type_price").onclick = function () {
-    filterAndDisplayRestaurants();
-};

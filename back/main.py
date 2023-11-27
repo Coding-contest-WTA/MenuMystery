@@ -78,8 +78,6 @@ def before_request():
     if auth_result:
         return auth_result
 
-
-# Endpoint to return index.html page
 @app.route('/restaurants', methods=["GET"])
 def restaurants_list():
     db = get_db()
@@ -105,20 +103,24 @@ def restaurants_list():
     filters = []
     typeArgs = request.args.getlist('type')
     priceArgs = request.args.getlist('price')
-    # Add more filters as needed
+    establishmentName = request.args.get('establishment_name')
 
     if typeArgs:
-        type_filters = [f"tf.type = '{t}'" for t in typeArgs]
+        type_filters = [f"tf.type IN ({', '.join(['%s']*len(typeArgs))})"]
         filters.extend(type_filters)
 
     if priceArgs:
-        price_filters = [f"r.price = {p}" for p in priceArgs]
+        price_filters = [f"r.price IN ({', '.join(['%s']*len(priceArgs))})"]
         filters.extend(price_filters)
+
+    if establishmentName:
+        filters.append("e.nom LIKE %s")
 
     if filters:
         query += " WHERE " + " AND ".join(filters)
 
-    cursor.execute(query)
+    params = typeArgs + priceArgs + [f"%{establishmentName}%"]
+    cursor.execute(query, params)
     rows = cursor.fetchall()
 
     # Close the cursor, as you're done with it
