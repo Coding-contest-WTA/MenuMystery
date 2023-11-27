@@ -216,7 +216,7 @@ $(document).ready(function () {
                 var targetElement = $("#foodlist_list");
                 data.forEach(function (item, index) {
                     if (item.name) {
-                        var backgroundColor = index % 3 === 0 ? "#E7FBE1" : (index % 3 === 1 ? "#F5F5F5" : "#FBE8FC");
+                        var backgroundColor = index % 3 === 0 ? "#d1f8c5" : (index % 3 === 1 ? "#fbf9e2" : "#f7dbf2");
                         var foodlistCard = createFoodlistCard(item, backgroundColor);
                         targetElement.append(foodlistCard);
                     }

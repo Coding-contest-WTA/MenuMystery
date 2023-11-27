@@ -9,12 +9,6 @@ function createRestaurantCard(restaurantData, index) {
     var restaurantImageContainer = document.createElement("div");
     restaurantImageContainer.className = "restaurant-image-container";
 
-    var restaurantImage = document.createElement("img");
-    restaurantImage.className = "restaurant-image";
-    restaurantImage.src = "../assets/resto_plats/restaurant" + index + ".jpg";
-    restaurantImage.style.width = "80%";
-    restaurantImageContainer.appendChild(restaurantImage);
-
     var textContainer = document.createElement("div");
     textContainer.className = "text-container";
 
@@ -25,6 +19,12 @@ function createRestaurantCard(restaurantData, index) {
     var priceElement = createInfoElement("Prix", restaurantData.price);
     var hoursElement = createInfoElement("Horaires", formatHours(restaurantData.establishment_opening, restaurantData.establishment_closure));
 
+    var restaurantImage = document.createElement("img");
+    restaurantImage.className = "restaurant-image";
+    restaurantImage.src = "../assets/resto_plats/" + restaurantData.establishment_name + ".jpg";
+    restaurantImage.style.width = "80%";
+    restaurantImageContainer.appendChild(restaurantImage);
+
     textContainer.appendChild(restaurantNameElement);
     textContainer.appendChild(descriptionElement);
     textContainer.appendChild(priceElement);
@@ -34,7 +34,7 @@ function createRestaurantCard(restaurantData, index) {
     urlElement.href = restaurantData.url;
     urlElement.textContent = "Site Web";
     urlElement.style.fontSize = "20px";
-    urlElement.style.color = "blue";
+    urlElement.style.color = "deepskyblue";
     urlElement.style.textAlign = "center";
 
     textContainer.appendChild(urlElement);

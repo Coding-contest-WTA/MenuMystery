@@ -62,16 +62,25 @@ body {
     margin: 20px auto; /* Center the button horizontally with some top and bottom margin */
     padding: 10px 20px; /* Add padding to the button */
     font-size: 40px; /* Increase the font size */
-    background-color: #f7dbf2; /* Set a background color */
+    background-color: white; /* Set a background color */
     color: black; /* Set the text color */
     border: none; /* Remove the button border */
     border-radius: 5px; /* Add rounded corners */
     cursor: pointer; /* Change cursor on hover */
     font-family: 'Great Vibes', cursive;
 }
-
 #filter_type_price:hover {
-    background-color: #2980b9; /* Change background color on hover */
+    background-color: white; /* Change background color on hover */
+}
+#modalCreationButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#modalCreationButton img {
+  width: 30px; /* Ajustez la largeur de l'image selon vos besoins */
+  height: 30px; /* Ajustez la hauteur de l'image selon vos besoins */
+  margin-right: 10px; /* Ajustez la marge entre l'image et le texte selon vos besoins */
 }
 
 /*navigation*/
