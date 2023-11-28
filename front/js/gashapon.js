@@ -70,6 +70,9 @@ returnButton.addEventListener('click', function () {
 
 function redirectAndDisplayRestaurants(){
     const type = document.getElementById("displayTypeText").innerText;
+
+    sessionStorage.setItem("fiche_restaurants_display", "false")
+
     $('#page-content').load('templates/fiche_restaurants.html', function () {
         imgElement.onclick = handleImageClick;
         $('#header, #footer, #bd_footer, #search-container, .large-button1, .large-button2, .large-button3, .large-button4').show();
@@ -78,6 +81,5 @@ function redirectAndDisplayRestaurants(){
 
         url = config.apiUrl + "/restaurants?type=" + type
         displayRestaurant(url)
-
     });
 }

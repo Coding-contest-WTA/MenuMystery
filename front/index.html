@@ -82,61 +82,7 @@
         </div>
     </div>
 
-    <div id="search-container" style="display: flex; align-items: center; background-color: white;">
-        <div id="search-bar">
-            <input type="text" id="search-input" placeholder="Rechercher..." style="font-size: 30px;">
-            <button id="search-button" style="height: 30px; font-size: 30px; background: none;">🔍</button>
-        </div>
-        <div class="dropdown">
-             <div id="overlay-filter" class="overlay-filter"></div>
-            <button id="filter-button">
-                <img src="assets/images/filters.png" alt="filtres" width="70">
-            </button>
-            <div id="filter-dropdown" class="dropdown-content">
-                <div>
-                    <span class="close" onclick="closeFilters()">&times;</span>
-                    <div style="text-align: center;">
-                        <img src="assets/images/marguerite_craie.png" alt="m" width="200">
-                        <img src="assets/images/poulpy_craie.png" alt="p" width="200">
-                    </div><br>
-                    <strong style="font-size: 50px; color: white; font-family: 'Great Vibes', cursive; text-align: center;">
-                        Type de nourriture
-                    </strong><br>
-                    <div style="font-size: 20px; color: white">
-                        <label><input type="checkbox" id="ramenCheckbox" value="Ramens"> Ramens</label>
-                        <label><input type="checkbox" id="sushiCheckbox" value="Sushis"> Sushis</label>
-                        <label><input type="checkbox" id="donburiCheckbox" value="Donburi"> Donburi</label>
-                        <label><input type="checkbox" id="sauteCheckbox" value="Sautés au wok"> Sautés au wok</label>
-                        <label><input type="checkbox" id="CurryCheckbox" value="Curry"> Curry</label>
-                        <label><input type="checkbox" id="GyozasCheckbox" value="Gyozas"> Gyozas</label>
-                        <label><input type="checkbox" id="BentosCheckbox" value="Bentos"> Bentos</label>
-                        <label><input type="checkbox" id="OkonomiyakiCheckbox" value="Okonomiyaki"> Okonomiyaki</label>
-                        <label><input type="checkbox" id="SobaCheckbox" value="Soba"> Soba</label>
-                        <label><input type="checkbox" id="UdonCheckbox" value="Udon"> Udon</label>
-                        <label><input type="checkbox" id="OmuriceCheckbox" value="Omurice"> Omurice</label>
-                        <label><input type="checkbox" id="VégétarienCheckbox" value="Végétarien"> Végétarien</label>
-                        <label><input type="checkbox" id="ThéCheckbox" value="Thé"> Thé</label>
-                        <label><input type="checkbox" id="DorayakiCheckbox" value="Dorayaki"> Dorayaki</label>
-                        <label><input type="checkbox" id="DaifukuCheckbox" value="Daifuku"> Daifuku</label>
-                        <label><input type="checkbox" id="MelonpanCheckbox" value="Melon pan"> Melon pan</label>
-                    </div>
-                </div>
-                <div style="font-size: 20px; color: white">
-                    <strong style="font-size: 50px; color: white; font-family: 'Great Vibes', cursive; text-align: center;">Prix</strong>
-                    <div>
-                        <label><input type="checkbox" id="5-10Checkbox" value="5€ - 10€"> 5-10€</label>
-                        <label><input type="checkbox" id="10-20Checkbox" value="10€ - 20€"> 10-20€</label>
-                        <label><input type="checkbox" id="20-30Checkbox" value="20€ - 30€"> 20-30€</label>
-                        <label><input type="checkbox" id="50-70Checkbox" value="50€ - 70€"> 50-70€</label>
-                    </div>
-                </div>
-                <br><br><br>
-                <button id="filter_type_price">
-                    Filtrer
-                </button>
-            </div>
-        </div>
-    </div>
+
 
     <div id="page-content"></div>
 
@@ -156,9 +102,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
     <script src="js/config.js"></script>
-<!--    <script src="js/list_restaurants.js"></script>-->
     <script src="js/login.js"></script>
-    <script src="js/filtres.js"></script>
 
     <script>
         $(document).ready(function () {

@@ -62,25 +62,38 @@ function getBackgroundColor(index) {
     return index % 3 === 0 ? "#d1f8c5" : (index % 3 === 1 ? "#fbf9e2" : "#f7dbf2");
 }
 
-$.ajax({
-    type: "GET",
-    url: config.apiUrl + "/restaurants",
-    dataType: "json",
-    success: function (data) {
-        if (data && data.length > 0) {
-            var targetElement = $("#nomsResto");
-            data.forEach(function (item, index) {
-                if (item.establishment_name) {
-                    var restaurantCard = createRestaurantCard(item, index);
-                    targetElement.append(restaurantCard);
+$(document).ready(function () {
+    if (sessionStorage.getItem("fiche_restaurants_display") !== "false") {
+
+        console.log("displayed");
+
+        $.ajax({
+            type: "GET",
+            url: config.apiUrl + "/restaurants",
+            dataType: "json",
+            success: function (data) {
+                if (data && data.length > 0) {
+                    var targetElement = $("#nomsResto");
+                    data.forEach(function (item, index) {
+                        if (item.establishment_name) {
+                            var restaurantCard = createRestaurantCard(item, index);
+                            targetElement.append(restaurantCard);
+                        }
+                    });
+                } else {
+                    console.log("Aucune donnée à afficher");
                 }
-            });
-        } else {
-            console.log("Aucune donnée à afficher");
-        }
-    },
-    error: function (data) {
-        console.error("Erreur lors de la requête AJAX : " + data);
-        $("#errorMessage").text("Erreur : " + data.statusText);
-    },
+            },
+            error: function (data) {
+                console.error("Erreur lors de la requête AJAX : " + data);
+                $("#errorMessage").text("Erreur : " + data.statusText);
+            },
+        });
+
+
+    }
+
+    sessionStorage.removeItem("fiche_restaurants_display")
+
+
 });
