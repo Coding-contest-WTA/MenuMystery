@@ -1,35 +1,47 @@
 function createFoodlistCard(foodlist, backgroundColor) {
     var foodlistCard = document.createElement("div");
     foodlistCard.className = "card restaurant-card";
-    foodlistCard.style.cssText = "background-color: " + backgroundColor + ";";
+    foodlistCard.style.cssText = "background-color: " + backgroundColor + "; margin: 32px 20px; padding: 40px 5px; border-radius: 40px; box-shadow: 12px 12px 5px rgba(234, 224, 236, 0.8);";
 
     var foodlistNameElement = document.createElement("h2");
-    foodlistNameElement.textContent = "Nom : " + foodlist.name;
+    foodlistNameElement.innerHTML = foodlist.name;
+    foodlistNameElement.style.fontSize = "40px";
 
-    var deleteButton = document.createElement("button");
-    deleteButton.textContent = "Supprimer Restaurant";
-    deleteButton.className = "btn btn-danger";
-    deleteButton.onclick = function () {
-        // Call the function to list restaurants in the foodlist
-        deleteRestaurant(foodlist.foodlist_user_id);
-    };
-
-    var dropdownButton = document.createElement("button");
-    dropdownButton.textContent = "Voir Restaurants";
-    dropdownButton.className = "btn btn-primary";
+    var dropdownButton = document.createElement("img");
+    dropdownButton.src = "../assets/images/display_foodlist.png";
+    dropdownButton.alt = "Voir Restaurants";
+    dropdownButton.style.width = "100px";
+    dropdownButton.className = "btn-icon";
     dropdownButton.onclick = function () {
-        // Call the function to list restaurants in the foodlist
         listRestaurantsInFoodlist(foodlist.foodlist_user_id, foodlistCard);
     };
 
     var dropdownList = document.createElement("ul");
     dropdownList.className = "dropdown-list";
     dropdownList.id = "dropdown-list-" + foodlist.foodlist_user_id;
+    dropdownList.style.fontSize = "30px";
+
+    var deleteButton = document.createElement("img");
+    deleteButton.src = "../assets/images/trash.png";
+    deleteButton.alt = "Supprimer Restaurant";
+    deleteButton.style.width = "100px";
+    deleteButton.style.height = "100px";
+    deleteButton.className = "btn-icon";
+    deleteButton.onclick = function () {
+        deleteRestaurant(foodlist.foodlist_user_id);
+    };
+
+    var dropdownContainer = document.createElement("div");
+    dropdownContainer.style.display = "flex";
+    dropdownContainer.style.alignItems = "center";
+    dropdownContainer.appendChild(dropdownButton);
+    dropdownContainer.appendChild(dropdownList);
+
+    dropdownContainer.style.marginRight = "auto";
 
     foodlistCard.appendChild(foodlistNameElement);
+    foodlistCard.appendChild(dropdownContainer);
     foodlistCard.appendChild(deleteButton);
-    foodlistCard.appendChild(dropdownButton);
-    foodlistCard.appendChild(dropdownList);
 
     return foodlistCard;
 }
@@ -161,6 +173,10 @@ function getRestaurantListForCheckboxes() {
             checkboxesContainer.innerHTML = "";
 
             if (data && data.length > 0) {
+                // Utilisation de Flexbox pour aligner les checkboxes à gauche du texte
+                checkboxesContainer.style.display = "flex";
+                checkboxesContainer.style.flexDirection = "column";
+
                 data.forEach(function (restaurant) {
                     var checkbox = document.createElement("input");
                     checkbox.type = "checkbox";
@@ -169,8 +185,11 @@ function getRestaurantListForCheckboxes() {
                     checkbox.id = "restaurant-" + restaurant.establishment_id;
 
                     var label = document.createElement("label");
-                    label.textContent = restaurant.name + " - " + restaurant.establishment_name
+                    label.textContent = restaurant.establishment_name;
                     label.htmlFor = "restaurant-" + restaurant.establishment_id;
+
+                    label.style.fontSize = "40px";
+                    label.style.color = "white";
 
                     checkboxesContainer.appendChild(checkbox);
                     checkboxesContainer.appendChild(label);

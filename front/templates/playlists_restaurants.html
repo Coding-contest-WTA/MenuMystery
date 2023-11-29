@@ -20,25 +20,35 @@
     <div id="createFoodListModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Créer une nouvelle liste de restaurants</h2>
+            <br><div style="display: flex; align-items: center; justify-content: space-between; text-align: center;">
+                <img src="assets/images/marguerite_craie.png" alt="m" width="150" style="margin-right: 20px;">
+                <h2 style="font-size: 60px; color: white; font-family: 'Great Vibes', cursive; margin: 0 20px;">Créer une nouvelle liste de restaurants</h2>
+                <img src="assets/images/poulpy_craie.png" alt="p" width="150" style="margin-left: 20px;">
+            </div><br>
             <form>
-                <label for="foodlistName">Nom de la liste :</label>
-                <input type="text" id="foodlistName" name="foodlistName" required>
-
-                <div id="restaurantCheckboxes">
-                    <!-- Restaurants checkboxes will be filled dynamically -->
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <label for="foodlistName" style="font-size: 40px; color: white; margin-right: 40px;">Nom de la liste :</label>
+                    <input type="text" id="foodlistName" name="foodlistName" required>
+                </div>
+                <br><br>
+                <label style="font-size: 40px; color: white;">Restaurants à inclure :</label><br>
+                <div id="scrollBoxContainer">
+                    <div id="restaurantCheckboxes"></div>
                 </div>
 
-                <button type="button" onclick="createFoodList()">Créer</button>
+                <br><br><button type="button" id="button_foodlists" onclick="createFoodList()">Créer</button>
             </form>
         </div>
     </div>
 
-    <button id="modalCreationButton" onclick="openModal()">
-      <img src="../assets/images/add_foodlist.png" alt="Créer une nouvelle liste" width="20%">
-    </button> Créer une nouvelle liste
+    <div style="display: flex; margin-left: 5%">
+        <button id="modalCreationButton" onclick="openModal()">
+            <img src="../assets/images/add_foodlist.png" alt="Créer une nouvelle liste" width="15%">
+            <label style="font-size: 30px; vertical-align: middle;">Créer une nouvelle liste</label>
+        </button>
+    </div>
 
-    <div id="foodlist_list" style="overflow:scroll;width:100%;height:1600px;"></div> <!--TODO: Pas ouf de coder en dur la taille, pb avec le footer ? "%" ne marche pas-->
+    <br><br><br><div id="foodlist_list"></div> <!--TODO: Pas ouf de coder en dur la taille, pb avec le footer ? "%" ne marche pas-->
 
 </body>
 
