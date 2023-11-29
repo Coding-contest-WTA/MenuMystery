@@ -100,6 +100,7 @@ returnButton.addEventListener('click', function () {
         $('#header, #footer, #bd_footer, #search-container, .large-button1, .large-button2, .large-button3, .large-button4').show();
         $('#overlay').show();
         bd_footer.style.height = "29%";
+        toggleFooter();
     });
 });
 
@@ -114,6 +115,7 @@ function redirectAndDisplayRestaurants() {
         $('#overlay').show();
         bd_footer.style.height = "29%";
 
+        toggleFooter()
         url = config.apiUrl + "/restaurants?type=" + type;
         displayRestaurant(url);
     });
