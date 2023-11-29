@@ -4,6 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu-Mystery</title>
+
+    <style>
+        #redirection {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7); /* Background color with some transparency */
+            padding: 20px;
+        }
+
+        #filterRestoBut {
+            font-size: 40px;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,18 +31,17 @@
             </span>
         </p>
     </div>
+
     <div id="imageFrame">
-        <img id="displayedImage" src="../assets/images/gesh_lum1.jpg" alt="default_image">
+        <img id="imageDisplay" onclick="handleImageClick()" style="cursor: pointer;">
+        <div id="redirection">
+            <p id="displayTypeText"></p>
+            <button id="filterRestoBut" class="login-out" onclick="redirectAndDisplayRestaurants()" style="display: none;">
+                <b>Voir les restaurants!</b>
+            </button>
+        </div>
     </div>
 
-    <div id="redirection">
-        <p id="displayTypeText"></p>
-
-        <button id="filterRestoBut" class="login-out" onclick="redirectAndDisplayRestaurants()">
-            <br><br><b style="font-size: 28px;">Redirection</b>
-        </button>
-
-    </div>
 </body>
 
 <script src="../js/gashapon.js"></script>
