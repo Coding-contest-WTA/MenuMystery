@@ -67,7 +67,7 @@ function handleImageClick() {
                     setTimeout(function () {
                         document.getElementById("displayTypeText").innerText = data[0].type;
                         document.getElementById('filterRestoBut').style.display = 'block';
-                    }, 4500);
+                    }, 5000);
                 } else {
                     console.log("Aucune donnée à afficher");
                 }
