@@ -10,14 +10,30 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            font-family: 'Great Vibes', cursive;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.7);
+            color: white;
+            font-size: 50px;
+            transform: translate(-50%, -50%);
+            border: 4mm ridge rgba(79, 43, 16, .6);
+            border-radius: 25px;
+            --stripe: 7px;
+            background: repeating-linear-gradient(45deg, #3a5035 0 var(--stripe), #30482b var(--stripe) calc(var(--stripe) * 2));
             padding: 20px;
         }
 
         #filterRestoBut {
             font-size: 40px;
+            display: block;
+            margin: 20px auto; /* Center the button horizontally with some top and bottom margin */
+            padding: 10px 20px; /* Add padding to the button */
+            font-size: 40px; /* Increase the font size */
+            background-color: white; /* Set a background color */
+            color: black; /* Set the text color */
+            border: none; /* Remove the button border */
+            border-radius: 5px; /* Add rounded corners */
+            cursor: pointer; /* Change cursor on hover */
+            font-family: 'Great Vibes', cursive;
         }
     </style>
 </head>
@@ -35,6 +51,7 @@
     <div id="imageFrame">
         <img id="imageDisplay" onclick="handleImageClick()" style="cursor: pointer;">
         <div id="redirection">
+            <p> Vous allez découvrir la catégorie :</p>
             <p id="displayTypeText"></p>
             <button id="filterRestoBut" class="login-out" onclick="redirectAndDisplayRestaurants()" style="display: none;">
                 <b>Voir les restaurants!</b>
