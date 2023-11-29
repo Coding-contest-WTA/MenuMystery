@@ -66,10 +66,10 @@ function handleImageClick() {
                 if (data && data.length > 0) {
                     setTimeout(function () {
                         document.getElementById("displayTypeText").innerText = data[0].type;
-                        document.getElementById("displayTypeText").innerText = data[0].type;
                         document.getElementById("displayTypeText").style.color = "white";
                         document.getElementById("displayTypeText").style.fontWeight = "bold";
-                        document.getElementById("displayTypeText").style.fontSize = "50px";
+                        document.getElementById("displayTypeText").style.fontSize = "80px";
+                        document.getElementById("redirection").style.display = 'block';
                         document.getElementById('filterRestoBut').style.display = 'block';
                     }, 5000);
                 } else {
