@@ -1,27 +1,11 @@
 window.myApp = {}; //éviter la déclaration multiple
 
 window.myApp.lumImages = [
-    '../../assets/images/gesh_lum1.jpg',
-    '../../assets/images/gesh_lum2.jpg',
-    '../../assets/images/gesh_lum3.jpg'
+    '../../assets/images/launch_page.gif'
 ];
 
 window.myApp.moveImages = [
-    '../../assets/images/gesh_bout.jpg',
-    '../../assets/images/gesh_move1.jpg',
-    '../../assets/images/gesh_move2.jpg',
-    '../../assets/images/gesh_move3.jpg',
-    '../../assets/images/gesh_move4.jpg',
-    '../../assets/images/gesh_move1.jpg',
-    '../../assets/images/gesh_move2.jpg',
-    '../../assets/images/gesh_move3.jpg',
-    '../../assets/images/gesh_move4.jpg',
-    '../../assets/images/gesh_move1.jpg',
-    '../../assets/images/gesh_move2.jpg',
-    '../../assets/images/gesh_move3.jpg',
-    '../../assets/images/gesh_move4.jpg',
-    '../../assets/images/gesh_boule_on.jpg',
-    '../../assets/images/gesh_boule_ok.jpg'
+    '../../assets/images/gasha_launch_ok.gif'
 ];
 
 window.myApp.currentIndex = 0;
@@ -29,13 +13,7 @@ window.myApp.intervalId;
 window.myApp.imgElement = document.getElementById('imageDisplay');
 window.myApp.changeImage = true;
 
-function startImageCarousel(images, delay) {
-    window.myApp.intervalId = setInterval(function () {
-        window.myApp.imgElement.src = images[window.myApp.currentIndex];
-        window.myApp.currentIndex = (window.myApp.currentIndex + 1) % images.length;
-    }, delay);
-}
-
+window.myApp.imgElement.src = window.myApp.lumImages[0];
 function changeImageFunction() {
     clearInterval(window.myApp.intervalId);
     let moveIndex = 0;
@@ -47,8 +25,6 @@ function changeImageFunction() {
         }
     }, 200);
 }
-
-startImageCarousel(window.myApp.lumImages, 200);
 
 function handleImageClick() {
     if (window.myApp.changeImage) {
@@ -71,7 +47,7 @@ function handleImageClick() {
                         document.getElementById("displayTypeText").style.fontSize = "80px";
                         document.getElementById("redirection").style.display = 'block';
                         document.getElementById('filterRestoBut').style.display = 'block';
-                    }, 5000);
+                    }, 3000);
                 } else {
                     console.log("Aucune donnée à afficher");
                 }
