@@ -2,19 +2,31 @@
 <html>
 <head>
     <title>Reconnaissance d'objets japonais</title>
+    <link rel="stylesheet" href="../css/reconaissance.css">
 </head>
+
 <body>
-    <br><br><br><div id="text_reco">
+    <div id="text_reco">
         Prenez une photo de la nourriture ou la vaisselle avec votre appareil...<br>
         ... et découvrez le résultat !
     </div>
 
-    <video id="video" width="640" height="480" autoplay></video>
     <button id="startButton">Lancer la reconnaissance!</button>
-    <button id="captureButton">Capturer une photo</button>
+    <br><br>
+    <div id="videoContainer">
+        <video id="video" width="640" height="480" autoplay></video>
+    </div>
+    <br><br>
+    <button id="captureButton">
+        <img id="captureImage" src="../assets/images/reco_icon.png" alt="prendre photo" width="20%">
+    </button>
     <canvas id="capturedImage" width="640" height="480"></canvas>
+
     <div id="predictions"></div>
     <div id="message"></div>
-    <script src="../js/reconnaissance-objets.js"></script>
+
 </body>
+
+<script src="../js/reconnaissance-objets.js"></script>
+
 </html>

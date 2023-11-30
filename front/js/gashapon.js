@@ -47,7 +47,7 @@ function handleImageClick() {
                         document.getElementById("displayTypeText").style.fontSize = "80px";
                         document.getElementById("redirection").style.display = 'block';
                         document.getElementById('filterRestoBut').style.display = 'block';
-                    }, 3000);
+                    }, 5000);
                 } else {
                     console.log("Aucune donnée à afficher");
                 }
