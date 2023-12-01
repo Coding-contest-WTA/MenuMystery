@@ -7,10 +7,14 @@ from flask import request, jsonify, g
 import base64
 
 import logging
+import os
+
 
 logging.basicConfig(level=logging.DEBUG)
+ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = flask.Flask(__name__)
+
 CORS(app, origins='*')
 
 
@@ -321,4 +325,5 @@ def signup():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', ssl_context='adhoc', port=5000, debug=True, threaded=True)
+    context = ('menu-mystery.com.crt', 'menu-mystery.com.key')#certificate and key files
+    app.run(host='0.0.0.0', ssl_context=context, port=5000, debug=True, threaded=True)
