@@ -96,3 +96,6 @@ function redirectAndDisplayRestaurants() {
         displayRestaurant(url);
     });
 }
+$(document).ready(function () {
+    autoChangeLanguage()
+});

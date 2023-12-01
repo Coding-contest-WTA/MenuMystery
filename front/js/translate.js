@@ -1,5 +1,4 @@
-let currentLanguage = 'en'; // Default language
-sessionStorage.setItem("language", currentLanguage)
+const initialLanguage = 'en'; // Default language
 
 function updateContent(translations) {
     function updateElementContent(elementId, content) {
@@ -15,6 +14,7 @@ function updateContent(translations) {
             element.setAttribute(attributeName, attributeValue);
         }
     }
+    const currentLanguage = sessionStorage.getItem("language")
 
     // fiche_restaurants
     updateElementAttribute('search_input', 'placeholder', translations[currentLanguage].search_input);
@@ -71,14 +71,12 @@ function updateContent(translations) {
 }
 
 function switchLanguageEnglish() {
-    currentLanguage = 'en';
-    sessionStorage.setItem("language", currentLanguage)
+    sessionStorage.setItem("language", "en")
     changeLanguage();
 }
 
 function switchLanguageFrench() {
-    currentLanguage = 'fr';
-    sessionStorage.setItem("language", currentLanguage)
+    sessionStorage.setItem("language", "fr")
     changeLanguage();
 }
 
@@ -102,11 +100,14 @@ function changeLanguage() {
 }
 
 $(document).ready(function () {
+    autoChangeLanguage()
+});
+
+function autoChangeLanguage() {
     const savedLanguage = sessionStorage.getItem("language");
     if (!savedLanguage) {
-        return ;
+        sessionStorage.setItem("language", initialLanguage)
     }
 
-    currentLanguage = savedLanguage;
     changeLanguage()
-});
+}

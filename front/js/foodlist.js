@@ -208,6 +208,8 @@ function getRestaurantListForCheckboxes() {
 
 // Call the getRestaurantListForCheckboxes function when the document is ready
 $(document).ready(function () {
+    autoChangeLanguage()
+
     const userId = sessionStorage.getItem("user_id");
 
     if (!userId) {

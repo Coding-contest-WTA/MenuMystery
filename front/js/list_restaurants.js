@@ -71,10 +71,9 @@ function getBackgroundColor(index) {
 }
 
 $(document).ready(function () {
+    autoChangeLanguage()
+
     if (sessionStorage.getItem("fiche_restaurants_display") !== "false") {
-
-        console.log("displayed");
-
         $.ajax({
             type: "GET",
             url: config.apiUrl + "/restaurants",
@@ -107,10 +106,12 @@ $(document).ready(function () {
 
 
 // when language changed: then we reload the page. Filters are saved.
-$('#button_to_english').click(function () {
+var displayFunctionLanguagesChanged = function () {
     filterAndDisplayRestaurants()
-});
+};
+document.getElementById('button_to_english').addEventListener("click", displayFunctionLanguagesChanged);
+document.getElementById('button_to_french').addEventListener("click", displayFunctionLanguagesChanged);
 
-$('#button_to_french').click(function () {
-    filterAndDisplayRestaurants()
-});
+// document.getElementById('button_to_english').addEventListener('click', filterAndDisplayRestaurants);
+// document.getElementById('button_to_french').addEventListener('click', filterAndDisplayRestaurants);
+

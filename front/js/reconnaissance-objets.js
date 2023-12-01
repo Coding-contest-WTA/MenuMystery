@@ -37,3 +37,7 @@ window.captureButton.addEventListener('click', () => {
 window.startButton.addEventListener('click', () => {
   window.isObjectDetectionRunning = !window.isObjectDetectionRunning;
 });
+
+$(document).ready(function () {
+    autoChangeLanguage()
+});

@@ -52,7 +52,6 @@ function getCheckedValues() {
 
 function filterAndDisplayRestaurants() {
     var checkedValues = getCheckedValues();
-    console.log(checkedValues);
 
     var foodValues = checkedValues.food;
     var priceValues = checkedValues.price;
