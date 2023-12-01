@@ -34,7 +34,7 @@ function createRestaurantCard(restaurantData, index) {
     urlElement.href = restaurantData.url;
     urlElement.textContent = "Site Web";
     urlElement.style.fontSize = "20px";
-    urlElement.style.color = "deepskyblue";
+    urlElement.style.color = "dodgerblue";
     urlElement.style.textAlign = "center";
 
     textContainer.appendChild(urlElement);
