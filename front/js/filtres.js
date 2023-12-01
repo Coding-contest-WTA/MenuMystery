@@ -34,6 +34,9 @@ function getCheckedValues() {
 
     foodCheckboxes.forEach(function(checkboxId) {
         const checkbox = document.getElementById(checkboxId)
+        if (!checkbox) {
+            return null
+        }
         if (checkbox.checked) {
             foodValues.push(checkbox.value);
         }
@@ -41,6 +44,10 @@ function getCheckedValues() {
 
     priceCheckboxes.forEach(function(checkboxId) {
         const checkbox = document.getElementById(checkboxId)
+        if (!checkbox) {
+            return null
+        }
+
         if (checkbox.checked) {
             priceValues.push(checkbox.value);
         }
@@ -52,6 +59,9 @@ function getCheckedValues() {
 
 function filterAndDisplayRestaurants() {
     var checkedValues = getCheckedValues();
+    if (!checkedValues) {
+            return null
+    }
 
     var foodValues = checkedValues.food;
     var priceValues = checkedValues.price;
