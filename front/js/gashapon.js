@@ -47,7 +47,7 @@ function handleImageClick() {
                         document.getElementById("displayTypeText").style.fontSize = "80px";
                         document.getElementById("redirection").style.display = 'block';
                         document.getElementById('filterRestoBut').style.display = 'block';
-                    }, 5000);
+                    }, 4000);
                 } else {
                     console.log("Aucune donnée à afficher");
                 }
@@ -73,7 +73,7 @@ returnButton.addEventListener('click', function () {
     var bd_footer = document.getElementById("bd_footer");
     $('#page-content').load('templates/fiche_restaurants.html', function () {
         window.myApp.imgElement.onclick = handleImageClick;
-        $('#header, #footer, #bd_footer, #search-container, .large-button1, .large-button2, .large-button3, .large-button4').show();
+        $('#header, #footer, #bd_footer, #search-container, #button_english, #button_french, .large-button1, .large-button2, .large-button3, .large-button4').show();
         $('#overlay').show();
         bd_footer.style.height = "29%";
         toggleFooter();
@@ -87,7 +87,7 @@ function redirectAndDisplayRestaurants() {
 
     $('#page-content').load('templates/fiche_restaurants.html', function () {
         window.myApp.imgElement.onclick = handleImageClick;
-        $('#header, #footer, #bd_footer, #search-container, .large-button1, .large-button2, .large-button3, .large-button4').show();
+        $('#header, #footer, #bd_footer, #search-container, #button_english, #button_french, .large-button1, .large-button2, .large-button3, .large-button4').show();
         $('#overlay').show();
         bd_footer.style.height = "29%";
 

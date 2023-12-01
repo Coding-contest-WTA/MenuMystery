@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="css/front.css">
     <link rel="stylesheet" href="css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        .language-button {
+            background-color: transparent;
+            border: none;
+            margin-right: 10px;
+            padding: 0;
+            cursor: pointer;
+            right: -135%;
+            position: relative;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: fadein 0.3s ease 0.3s forwards;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,20 +40,12 @@
 
         <button id="connexion" class="login-out" onclick="openAuthModal()">
             <img src="assets/images/login.png" alt="Connexion Button">
-            <br><br><b id="connexion_menu_txt" style="font-size: 28px;">Connexion</b>
+            <br><br><b id="connexion_menu_txt" style="font-size: 20px;">Connexion</b>
         </button>
 
         <button id="logoutButton" class="login-out" onclick="logout()" style="display: none;">
             <img src="assets/images/login.png" alt="Log out Button">
             <br><br><b id="deconnexion_menu_txt" style="font-size: 28px;">Log out</b>
-        </button>
-
-        <button id="button_to_english" onclick="switchLanguageEnglish()">
-            English
-        </button>
-
-        <button id="button_to_french" onclick="switchLanguageFrench()">
-            French
         </button>
 
         <div id="authModal" class="modal">
@@ -60,7 +66,6 @@
 
                         <br><button id="login_form_connexion_button" type="button" onclick="login()">Connexion</button>
 
-                        <!-- Error message container -->
                         <br><div id="signinErrorMessage" style="color: navajowhite;"></div>
                     </form>
                     <div id="no_account_container" style="font-size: 35px; color: white; display: flex; align-items: center;">
@@ -85,7 +90,6 @@
                         <br>
                         <button id="signup_form_connexion_button" type="button" onclick="signup()">S'inscrire</button>
 
-                        <!-- Error message container -->
                         <br><div id="signupErrorMessage" style="color: navajowhite;"></div>
                     </form>
                     <div id="already_account_container" style="font-size: 35px; color: white; display: flex; align-items: center;">
@@ -104,6 +108,13 @@
     <div id="overlay"></div>
 
    <div id="footer" style="display: none;" onclick="toggleFooter()">
+       <button id="button_english" class="language-button" onclick="switchLanguageEnglish()">
+            <img src="assets/images/en_flag.jpg" alt="English" width="85px" height="70px">
+        </button>
+        <button id="button_french"  class="language-button" onclick="switchLanguageFrench()">
+            <img src="assets/images/fr_flag.jpg" alt="French" width="85px" height="70px">
+        </button>
+
         <img id="playlists_restaurants" class="large-button1" src="assets/images/foodlist.webp" alt="playlists_restaurants">
         <img id="fiche_restaurants" class="large-button2" src="assets/images/fiche.webp" alt="fiche_restaurants">
         <img id="geshapon_page_restaurants" class="large-button3" src="assets/images/gachalogo.webp" alt="geshapon_page_restaurants">
@@ -125,7 +136,7 @@
     <script>
         $(document).ready(function () {
             $('#geshapon_page_restaurants').click(function () {
-                $('#header, #footer, #bd_footer, #search-container, .large-button1, .large-button2, .large-button3, .large-button4').toggle();
+                $('#header, #footer, #button_english, #button_french, #bd_footer, #search-container, .large-button1, .large-button2, .large-button3, .large-button4').toggle();
                 $('#overlay').fadeToggle(500);
             });
         });
@@ -143,6 +154,8 @@
                 document.getElementById("fiche_restaurants").classList.add("large-button2");
                 document.getElementById("geshapon_page_restaurants").classList.add("large-button3");
                 document.getElementById("reconnaissance-objets").classList.add("large-button4");
+                document.getElementById("button_english").classList.add("language-button");
+                document.getElementById("button_french").classList.add("language-button");
             } else {
                 footer.style.display = "none";
                 $('#overlay').fadeToggle(500);
@@ -152,6 +165,8 @@
                 document.getElementById("fiche_restaurants").classList.remove("large-button2");
                 document.getElementById("geshapon_page_restaurants").classList.remove("large-button3");
                 document.getElementById("reconnaissance-objets").classList.remove("large-button4");
+                document.getElementById("button_english").classList.remove("language-button");
+                document.getElementById("button_french").classList.remove("language-button");
             }
         }
     </script>

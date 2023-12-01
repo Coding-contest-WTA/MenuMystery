@@ -66,7 +66,6 @@ function updateContent(translations) {
     updateElementContent('signup_form_connexion_button', translations[currentLanguage].signup_form_connexion_button);
     updateElementContent('already_account_txt', translations[currentLanguage].already_account_txt);
     updateElementContent('already_account_signup', translations[currentLanguage].already_account_signup);
-    updateElementContent('button_to_english', translations[currentLanguage].button_to_english);
     updateElementContent('button_to_french', translations[currentLanguage].button_to_french);
 }
 

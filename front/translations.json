@@ -42,9 +42,7 @@
     "signup_form_password": "Password:",
     "signup_form_connexion_button": "Signup",
     "already_account_txt": "You have already an account?",
-    "already_account_signup": "Signin",
-    "button_to_english": "English",
-    "button_to_french": "French"
+    "already_account_signup": "Signin"
   },
   "fr": {
     "search_input": "Rechercher...",
@@ -89,8 +87,6 @@
     "signup_form_password": "Mot de passe:",
     "signup_form_connexion_button": "S'inscrire",
     "already_account_txt": "Vous avez déjà un compte ?",
-    "already_account_signup": "S'identifier",
-    "button_to_english": "Anglais",
-    "button_to_french": "Français"
+    "already_account_signup": "S'identifier"
   }
 }

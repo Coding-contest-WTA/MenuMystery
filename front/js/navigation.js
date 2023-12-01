@@ -27,7 +27,7 @@ function removeEventListener() {
     var displayFunctionLanguagesChanged = function () {
         filterAndDisplayRestaurants()
     };
-    document.getElementById('button_to_english').addEventListener("click", displayFunctionLanguagesChanged);
-    document.getElementById('button_to_french').addEventListener("click", displayFunctionLanguagesChanged);
+    document.getElementById('button_english').addEventListener("click", displayFunctionLanguagesChanged);
+    document.getElementById('button_french').addEventListener("click", displayFunctionLanguagesChanged);
 
 }

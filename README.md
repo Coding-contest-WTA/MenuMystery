@@ -4,7 +4,7 @@ __Kathleen Equilbec<sup>1</sup>, Elora Vigo<sup>2</sup>, Fiona Hak<sup>2</sup>__
 <br>
 <sub>1. Lyon University (France) <br>2. Paris-Saclay University, Orsay (France)
 
-This repository contains the source code for the Menu-Mystery web application developed as part of the WEB TECHNOLOGIES FOR APPLICATIONS coding contest.
+This repository contains the source code for the Menu-Mystery web application developed as part of the web technologies for applications coding contest.
 
 # Table of contents
 
@@ -35,11 +35,11 @@ If necessary, containers and images can be cleaned via :
 
     docker system prune -f -a
 
-Then to display the results in a browser (tested on Chrome), go to: http://0.0.0.0/
+Then to display the results in a browser (tested on Chrome), go to: http://127.0.0.1/
 
 To display the response to queries at back-end level:
 
-    curl http://0.0.0.0:8002
+    curl http://127.0.0.1/:8002
 
 ## Technical description<a name="Technical-description"></a>
 All parts of the code are linked and run from dependencies built on docker with docker-compose. 
