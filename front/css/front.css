@@ -230,7 +230,7 @@ body {
     right: 25%;
     cursor: pointer;
     position: relative;
-    top: -6%;
+    top: -10%;
     opacity: 0;
     transition: opacity 0.3s ease;
     animation: fadein 0.3s ease 0.3s forwards;
@@ -240,7 +240,7 @@ body {
     right: -135%;
     cursor: pointer;
     position: relative;
-    top: -3%;
+    top: -10%;
     opacity: 0;
     transition: opacity 0.3s ease;
     animation: fadein 0.3s ease 0.3s forwards;
@@ -250,7 +250,7 @@ body {
     right: 25%;
     cursor: pointer;
     position: relative;
-    top: 1%;
+    top: -10%;
     opacity: 0;
     transition: opacity 0.3s ease;
     animation: fadein 0.3s ease 0.3s forwards;
@@ -260,7 +260,7 @@ body {
     right: -135%;
     cursor: pointer;
     position: relative;
-    top: 5%;
+    top: -10%;
     opacity: 0;
     transition: opacity 0.3s ease;
     animation: fadein 0.3s ease 0.3s forwards;

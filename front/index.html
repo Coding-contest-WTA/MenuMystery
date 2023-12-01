@@ -14,10 +14,8 @@
             background-color: transparent;
             border: none;
             margin-right: 10px;
-            padding: 0;
             cursor: pointer;
             right: -135%;
-            position: relative;
             opacity: 0;
             transition: opacity 0.3s ease;
             animation: fadein 0.3s ease 0.3s forwards;
@@ -108,18 +106,17 @@
     <div id="overlay"></div>
 
    <div id="footer" style="display: none;" onclick="toggleFooter()">
-       <button id="button_english" class="language-button" onclick="switchLanguageEnglish()">
-            <img src="assets/images/en_flag.jpg" alt="English" width="85px" height="70px">
-        </button>
-        <button id="button_french"  class="language-button" onclick="switchLanguageFrench()">
-            <img src="assets/images/fr_flag.jpg" alt="French" width="85px" height="70px">
-        </button>
-
         <img id="playlists_restaurants" class="large-button1" src="assets/images/foodlist.webp" alt="playlists_restaurants">
         <img id="fiche_restaurants" class="large-button2" src="assets/images/fiche.webp" alt="fiche_restaurants">
         <img id="geshapon_page_restaurants" class="large-button3" src="assets/images/gachalogo.webp" alt="geshapon_page_restaurants">
         <img id="reconnaissance-objets" class="large-button4" src="assets/images/recognition.webp" alt="reconnaissance-objets">
-    </div>
+        <button id="button_english" class="language-button" onclick="switchLanguageEnglish()">
+            <img src="assets/images/en_flag.jpg" alt="English" width="65px" height="50px">
+        </button>
+        <button id="button_french"  class="language-button" onclick="switchLanguageFrench()">
+            <img src="assets/images/fr_flag.jpg" alt="French" width="65px" height="50px">
+        </button>
+   </div>
 
     <img src="assets/images/bd_footer_w.webp" alt="bd_footer" id="bd_footer" onclick="toggleFooter()">
 
