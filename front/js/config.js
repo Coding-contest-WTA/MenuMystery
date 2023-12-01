@@ -1,4 +1,4 @@
 const config = {
-        apiUrl: 'http://127.0.0.1:8002/'
+        apiUrl: 'https://node173554-menumystery.sh2.hidora.net:11008/'
 };
 
