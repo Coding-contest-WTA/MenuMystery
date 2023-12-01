@@ -11,7 +11,8 @@ function switchToSignup() {
 }
 
 function logout() {
-    sessionStorage.clear();
+    sessionStorage.removeItem("user_id");
+    sessionStorage.removeItem("authorization");
     toggleButtonConnexion();
 }
 

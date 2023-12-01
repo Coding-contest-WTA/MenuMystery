@@ -78,13 +78,13 @@ document.getElementById("filter_type_price").onclick = function () {
     filterAndDisplayRestaurants();
 };
 
-document.getElementById("search-input").onchange = function () {
+document.getElementById("search_input").onchange = function () {
     const url = config.apiUrl + "restaurants?establishment_name=" + this.value
     displayRestaurant(url)
 };
 
 document.getElementById("search-button").onclick = function () {
-    const url = config.apiUrl + "restaurants?establishment_name=" + document.getElementById("search-input").value
+    const url = config.apiUrl + "restaurants?establishment_name=" + document.getElementById("search_input").value
     displayRestaurant(url)
 }
 

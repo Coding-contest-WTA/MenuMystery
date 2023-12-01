@@ -18,11 +18,12 @@
         <br><br>
 
         <div id="text_reco">
-            Prenez une photo de la nourriture <br>ou la vaisselle avec votre appareil... :<br><br>
+            <p id="text_reco_text_1"> Prenez une photo de la nourriture </p> <br>
+            <p id="text_reco_text_2"> ou la vaisselle avec votre appareil... :</p> <br><br>
             <button id="captureButton">
                 <img id="captureImage" src="../assets/images/reco_icon.png" alt="prendre photo">
             </button><br><br>
-            ... et découvrez le résultat :
+            <p id="text_reco_text_3"> ... et découvrez le résultat : </p>
         </div>
         <canvas id="capturedImage" width="640" height="480"></canvas>
 
@@ -32,22 +33,27 @@
 
     <div id="baguetteContainerall">
         <div id="infoContainer">
-            <p> Point info' :<br> Les baguettes sont employées comme des <br>couverts à table au Japon.<br>
-        Voici une illustration de la<br> manière correcte de les manipuler :</p>
+
+            <p id="infoContainer_txt_1"> Point info' : </p> <br>
+            <p id="infoContainer_txt_2"> Les baguettes sont employées comme des </p> <br>
+            <p id="infoContainer_txt_3"> couverts à table au Japon. </p> <br>
+            <p id="infoContainer_txt_4"> Voici une illustration de la </p> <br>
+            <p id="infoContainer_txt_5" > manière correcte de les manipuler :</p>
         </div>
         <img src="../assets/images/demo_chopsticks.jpg" alt="demo" width="70%">
-        <p> Maintenant à vous de jouer ! </p>
+        <p id="now_you_play_txt"> Maintenant à vous de jouer ! </p>
         <div id="baguetteContainer">
             <button id="startButtonChop">Cliquez ici pour allumer la caméra!</button>
             <br><br>
             <video id="videoChop" width="640" height="480"></video>
             <br><br>
             <div id="text_reco2">
-                Prenez une photo de la façon <br>dont vous tenez vos baguettes... :<br><br>
+                <p id="text_reco2_txt_1"> Prenez une photo de la façon </p> <br>
+                <p id="text_reco2_txt_2"> dont vous tenez vos baguettes... : </p> <br><br>
                 <button id="verifyButton">
                     <img id="captureImage2" src="../assets/images/reco_icon.png" alt="prendre photo">
                 </button><br><br>
-                ... et découvrez le résultat :
+                <p id="text_reco2_txt_3"> ... et découvrez le résultat :</p>
             </div>
             <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
 

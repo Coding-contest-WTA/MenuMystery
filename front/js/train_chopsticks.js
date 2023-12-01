@@ -41,10 +41,16 @@ async function checkPosition() {
     window.model.detect(window.canvasElement).then(predictions => {
         updateObjectsPositions(predictions);
 
+
         if (areObjectsCrossing()) {
-            displayResult("Bravo, c'est correct !");
+            displayResult(valueDependingLanguage("Well done, it's correct", "Bravo, c'est correct !"));
         } else {
-            displayResult("Ce n'est pas encore complètement ça, regardez la démonstration avant de réessayer !");
+            displayResult(
+                valueDependingLanguage(
+                    "It's not completely done, see the demo before retry it!",
+                    "Ce n'est pas encore complètement ça, regardez la démonstration avant de réessayer !")
+            );
+
         }
     });
 }

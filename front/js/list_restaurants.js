@@ -12,12 +12,20 @@ function createRestaurantCard(restaurantData, index) {
     var textContainer = document.createElement("div");
     textContainer.className = "text-container";
 
-    var restaurantNameElement = document.createElement("h2");
-    restaurantNameElement.textContent = "Nom : " + restaurantData.establishment_name;
+    const textNom = valueDependingLanguage("Name", "Nom")
+    const textDescription = valueDependingLanguage("Description", "Description")
+    const textPrice = valueDependingLanguage("Price", "Prix")
+    const textSchedule = valueDependingLanguage("Schedule", "Horaires")
+    const textWebsite = valueDependingLanguage("Website", "Site Web")
 
-    var descriptionElement = createInfoElement("Description", restaurantData.establishment_description);
-    var priceElement = createInfoElement("Prix", restaurantData.price);
-    var hoursElement = createInfoElement("Horaires", formatHours(restaurantData.establishment_opening, restaurantData.establishment_closure));
+    const restoDescription = valueDependingLanguage(restaurantData.establishment_description_eng, restaurantData.establishment_description)
+
+    var restaurantNameElement = document.createElement("h2");
+    restaurantNameElement.textContent = textNom + " : " + restaurantData.establishment_name;
+
+    var descriptionElement = createInfoElement(textDescription, restoDescription);
+    var priceElement = createInfoElement(textPrice, restaurantData.price);
+    var hoursElement = createInfoElement(textSchedule, formatHours(restaurantData.establishment_opening, restaurantData.establishment_closure));
 
     var restaurantImage = document.createElement("img");
     restaurantImage.className = "restaurant-image";
@@ -32,7 +40,7 @@ function createRestaurantCard(restaurantData, index) {
 
     var urlElement = document.createElement("a");
     urlElement.href = restaurantData.url;
-    urlElement.textContent = "Site Web";
+    urlElement.textContent = textWebsite;
     urlElement.style.fontSize = "20px";
     urlElement.style.color = "dodgerblue";
     urlElement.style.textAlign = "center";
@@ -74,6 +82,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data && data.length > 0) {
                     var targetElement = $("#nomsResto");
+                    targetElement.empty();
                     data.forEach(function (item, index) {
                         if (item.establishment_name) {
                             var restaurantCard = createRestaurantCard(item, index);
@@ -94,6 +103,14 @@ $(document).ready(function () {
     }
 
     sessionStorage.removeItem("fiche_restaurants_display")
+});
 
 
+// when language changed: then we reload the page. Filters are saved.
+$('#button_to_english').click(function () {
+    filterAndDisplayRestaurants()
+});
+
+$('#button_to_french').click(function () {
+    filterAndDisplayRestaurants()
 });

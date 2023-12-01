@@ -14,22 +14,22 @@ INSERT INTO restaurant VALUES(11, 'Bobo snack', '5€ - 10€', 'https://www.bob
 INSERT INTO restaurant VALUES(12, 'Abri soba', '20€ - 30€', 'https://lefooding.com/restaurants/restaurant-abri-soba-paris-3');
 
 -- establishment
-INSERT INTO establishment VALUES(011, 1, 'Kodawari Ramen Yokochō', 'Spécialisé dans la préparation de ramen à base de viande. Décor en ruelle étroite abritant des izakaya', 11.45, 23.0);
-INSERT INTO establishment VALUES(012, 1, 'Kodawari Ramen Tsukiji', 'Spécialisé dans la préparation de ramen à base de poisson. Le décor reprend celui du marché historique aux poissons Tsukiji de Tokyo', 11.45, 23.0);
-INSERT INTO establishment VALUES(021, 2, 'Higuma', 'Restaurant japonais de style décontracté servant ramens, plats sautés et donburis', 11.30, 22.0);
-INSERT INTO establishment VALUES(031, 3, 'Tomo Odéon', 'Salon de thé japonais proposant thé vert, plats de nouilles et dorayakis', 12.0, 19.0);
-INSERT INTO establishment VALUES(032, 3, 'Tomo Opéra', 'Salon de thé japonais proposant thé vert, plats de nouilles et dorayakis', 12.0, 19.0);
-INSERT INTO establishment VALUES(041, 4, 'Aki Boulangerie', 'Boulangerie proposant des desserts japonais classiques, y compris melon pains et cookies au thé matcha.', 7.30, 20.30);
-INSERT INTO establishment VALUES(042, 4, 'Mochi Mochi Aki', 'Petite boulangerie proposant des desserts japonais, à emporter.', 11.00, 18.30);
-INSERT INTO establishment VALUES(043, 4, 'Aki Restaurant', 'Okonomiyaki, nouilles soba et autres spécialités d''Osaka servis dans un restaurant à l''ambiance détendue doté d''une cuisine ouverte.', 7.30, 20.30);
-INSERT INTO establishment VALUES(051, 5, 'Kanadé', 'Spécialités japonaises, dont les donburi, les sushis et les bentos, servis dans une salle contemporaine.', 12.00, 22.00);
-INSERT INTO establishment VALUES(061, 6, 'Juji-ya Bento', 'Petit restaurant sur 2 niveaux avec tables basiques, proposant bentos personnalisables et articles d''épicerie japonais.', 11.30, 21.00);
-INSERT INTO establishment VALUES(071, 7, 'Tonkatsu Tombo', 'Restaurant simple proposant un choix de menus japonais fixes, avec des côtelettes de porc frites et leur accompagnement.', 12.00, 22.00);
-INSERT INTO establishment VALUES(081, 8, 'OMURICE Étoile', 'Un riz sauté sauté à la tomate caché dans une omelette moelleuse décoré avec un joli dessin au ketchup.', 12.00, 21.00);
-INSERT INTO establishment VALUES(091, 9, 'Happatei', 'Restaurant coloré servant des pancakes, des nouilles et des gaufres japonais dans une ambiance détendue.', 11.30, 22.30);
-INSERT INTO establishment VALUES(101, 10, 'OKOMUSU', 'Des spécialités d''okonomiyaki (galettes japonaises garnies) servies dans un cadre moderne aux murs de pierres.', 12.00, 21.00);
-INSERT INTO establishment VALUES(111, 11, 'Bobo snack', 'Ramen, Doburi, Tempura, Karaage...', 12.00, 21.00);
-INSERT INTO establishment VALUES(121, 12, 'Abri soba', 'Restaurant de nouilles au sarrasin (soba)', 12.00, 22.30);
+INSERT INTO establishment VALUES(011, 1, 'Kodawari Ramen Yokochō', 'Spécialisé dans la préparation de ramen à base de viande. Décor en ruelle étroite abritant des izakaya', 'Specializing in meat ramen. Narrow alley decor housing izakaya',11.45, 23.0);
+INSERT INTO establishment VALUES(012, 1, 'Kodawari Ramen Tsukiji', 'Spécialisé dans la préparation de ramen à base de poisson. Le décor reprend celui du marché historique aux poissons Tsukiji de Tokyo','Specializing in fish ramen. The decor is reminiscent of Tokyo''s historic Tsukiji fish market.', 11.45, 23.0);
+INSERT INTO establishment VALUES(021, 2, 'Higuma', 'Restaurant japonais de style décontracté servant ramens, plats sautés et donburis', 'Casual Japanese restaurant serving ramen, stir-fry and donburi',11.30, 22.0);
+INSERT INTO establishment VALUES(031, 3, 'Tomo Odéon', 'Salon de thé japonais proposant thé vert, plats de nouilles et dorayakis', 'Salon de thé japonais proposant thé vert, plats de nouilles et dorayakis',12.0, 19.0);
+INSERT INTO establishment VALUES(032, 3, 'Tomo Opéra', 'Salon de thé japonais proposant thé vert, plats de nouilles et dorayakis','Salon de thé japonais proposant thé vert, plats de nouilles et dorayakis', 12.0, 19.0);
+INSERT INTO establishment VALUES(041, 4, 'Aki Boulangerie', 'Boulangerie proposant des desserts japonais classiques, y compris melon pains et cookies au thé matcha.','Bakery serving classic Japanese desserts, including melon bread and matcha tea cookies.', 7.30, 20.30);
+INSERT INTO establishment VALUES(042, 4, 'Mochi Mochi Aki', 'Petite boulangerie proposant des desserts japonais, à emporter.', 'Small bakery offering Japanese desserts to take away.', 11.00, 18.30);
+INSERT INTO establishment VALUES(043, 4, 'Aki Restaurant', 'Okonomiyaki, nouilles soba et autres spécialités d''Osaka servis dans un restaurant à l''ambiance détendue doté d''une cuisine ouverte.', 'Okonomiyaki, soba noodles and other Osaka specialties served in a relaxed restaurant with an open kitchen.',7.30, 20.30);
+INSERT INTO establishment VALUES(051, 5, 'Kanadé', 'Spécialités japonaises, dont les donburi, les sushis et les bentos, servis dans une salle contemporaine.','Japanese specialties, including donburi, sushi and bentos, served in a contemporary dining room.', 12.00, 22.00);
+INSERT INTO establishment VALUES(061, 6, 'Juji-ya Bento', 'Petit restaurant sur 2 niveaux avec tables basiques, proposant bentos personnalisables et articles d''épicerie japonais.', 'Small 2-level restaurant with basic tables, offering customizable bentos and Japanese grocery items.',11.30, 21.00);
+INSERT INTO establishment VALUES(071, 7, 'Tonkatsu Tombo', 'Restaurant simple proposant un choix de menus japonais fixes, avec des côtelettes de porc frites et leur accompagnement.', 'Simple restaurant offering a choice of set Japanese menus, with fried pork chops and side dishes.',12.00, 22.00);
+INSERT INTO establishment VALUES(081, 8, 'OMURICE Étoile', 'Un riz sauté sauté à la tomate caché dans une omelette moelleuse décoré avec un joli dessin au ketchup.', 'Sautéed rice with tomato hidden in a fluffy omelette decorated with a pretty ketchup design.',12.00, 21.00);
+INSERT INTO establishment VALUES(091, 9, 'Happatei', 'Restaurant coloré servant des pancakes, des nouilles et des gaufres japonais dans une ambiance détendue.', 'Colorful restaurant serving Japanese pancakes, noodles and waffles in a relaxed atmosphere.', 11.30, 22.30);
+INSERT INTO establishment VALUES(101, 10, 'OKOMUSU', 'Des spécialités d''okonomiyaki (galettes japonaises garnies) servies dans un cadre moderne aux murs de pierres.', 'Specialties of okonomiyaki (filled Japanese pancakes) served in a modern stone-walled setting.', 12.00, 21.00);
+INSERT INTO establishment VALUES(111, 11, 'Bobo snack', 'Ramen, Doburi, Tempura, Karaage...', 'Ramen, doburi, tempura, karaage...', 12.00, 21.00);
+INSERT INTO establishment VALUES(121, 12, 'Abri soba', 'Restaurant de nouilles au sarrasin (soba)', 'Buckwheat noodle (soba) restaurant', 12.00, 22.30);
 
 -- type_food
 INSERT INTO type_food VALUES(1,'Ramens', 'Plat');

@@ -12,6 +12,7 @@ CREATE TABLE establishment(
     restaurant_id integer not null,
     nom varchar(50),
     description varchar(200),
+    description_eng varchar(200),
     opening decimal,
     closure decimal,
     FOREIGN KEY(restaurant_id) REFERENCES restaurant(restaurant_id)

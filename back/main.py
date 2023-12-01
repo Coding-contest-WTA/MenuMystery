@@ -109,6 +109,7 @@ def restaurants_list():
     r.url,
     e.nom as establishment_name,
     e.description as establishment_description,
+    e.description_eng as establishment_description_eng,
     e.opening as establishment_opening,
     e.closure as establishment_closure
     FROM restaurant as r

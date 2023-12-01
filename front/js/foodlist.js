@@ -9,9 +9,9 @@ function createFoodlistCard(foodlist, backgroundColor) {
 
     var dropdownButton = document.createElement("img");
     dropdownButton.src = "../assets/images/display_foodlist.png";
-    dropdownButton.alt = "Voir Restaurants";
+    dropdownButton.alt = valueDependingLanguage("See Restaurants", "Voir Restaurants");
     dropdownButton.style.width = "100px";
-    dropdownButton.className = "btn-icon";
+    dropdownButton.className = "see-restaurants btn-icon";
     dropdownButton.onclick = function () {
         listRestaurantsInFoodlist(foodlist.foodlist_user_id, foodlistCard);
     };
@@ -23,7 +23,7 @@ function createFoodlistCard(foodlist, backgroundColor) {
 
     var deleteButton = document.createElement("img");
     deleteButton.src = "../assets/images/trash.png";
-    deleteButton.alt = "Supprimer Restaurant";
+    deleteButton.alt = valueDependingLanguage("Remove Restaurant", "Supprimer Restaurant");
     deleteButton.style.width = "100px";
     deleteButton.style.height = "100px";
     deleteButton.className = "btn-icon";

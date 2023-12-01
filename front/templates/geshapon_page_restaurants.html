@@ -42,7 +42,7 @@
     <div id="header_gasha">
         <img id="returnButton" src="../assets/images/back_previous.png" alt="returnButton">
         <p id="middle-text_gasha">
-            <span class="title-text_gasha">
+            <span id="gashapon_click_text" class="title-text_gasha">
                 Cliquez sur la machine pour tirer une bille au sort !
             </span>
         </p>
@@ -51,10 +51,10 @@
     <div id="imageFrame">
         <img id="imageDisplay" onclick="handleImageClick()" style="cursor: pointer;">
         <div id="redirection" style="display: none;">
-            <p> Vous allez découvrir la catégorie :</p>
+            <p id="categorie_choosen" > Vous allez découvrir la catégorie :</p>
             <p id="displayTypeText"></p>
             <button id="filterRestoBut" class="login-out" onclick="redirectAndDisplayRestaurants()" style="display: none;">
-                <b>Voir les restaurants!</b>
+                <b id="see_restaurants" >Voir les restaurants!</b>
             </button>
         </div>
     </div>
