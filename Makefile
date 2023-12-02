@@ -1,7 +1,7 @@
 build-app:
 	docker-compose -f docker-compose.yml build
 
-launch-app:
+launch-app: build-app
 	docker-compose -f docker-compose.yml up
 
 connect-db:

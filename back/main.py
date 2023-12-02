@@ -5,13 +5,16 @@ from flask_cors import CORS
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask import request, jsonify, g
 import base64
-
 import logging
 import os
+import ssl
 
 
 logging.basicConfig(level=logging.DEBUG)
 ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
+
+context = ssl.SSLContext()
+context.load_cert_chain('/app/menu-mystery.com.crt', "/app/menu-mystery.com.key")
 
 app = flask.Flask(__name__)
 
@@ -70,7 +73,7 @@ def basic_auth_middleware():
 @app.before_request
 def before_request():
     # Exclude the '/' and '/signup' endpoints from the middleware
-    if request.endpoint in ['restaurants_list', 'signup', 'type_food_choose']:
+    if request.endpoint in ['restaurants_list', 'signup', 'type_food_choose', 'index']:
         return None
     if request.method == "OPTIONS":
         return None
@@ -81,6 +84,11 @@ def before_request():
     # If the middleware returns a response, return it immediately
     if auth_result:
         return auth_result
+
+@app.route('/')
+def index():
+    return 'Flask is running!'
+
 
 @app.route('/food/choose', methods=["GET"])
 def type_food_choose():
@@ -325,5 +333,4 @@ def signup():
 
 
 if __name__ == '__main__':
-    context = ('menu-mystery.com.crt', 'menu-mystery.com.key')#certificate and key files
     app.run(host='0.0.0.0', ssl_context=context, port=5000, debug=True, threaded=True)
