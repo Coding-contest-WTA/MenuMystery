@@ -5,6 +5,7 @@ __Kathleen Equilbec<sup>1</sup>, Elora Vigo<sup>2</sup>, Fiona Hak<sup>2</sup>__
 <sub>1. Lyon University (France) <br>2. Paris-Saclay University, Orsay (France)
 
 This repository contains the source code for the Menu-Mystery web application developed as part of the web technologies for applications coding contest.
+Menu-Mystery, a bilingual (English and French) Progressive Web Application, introduces a fresh approach to discovering Japanese restaurants in Paris. Powered by a sophisticated tech stack, including PostgreSQL, Python with Flask, NGINX, HTML5, CSS, JS, and TensorFlow, it provides a unique and engaging experience. Beyond conventional features, the platform includes innovative functionalities such as a randomized selection of food types and associated restaurants, along with food recognition and chopstick proficiency analysis, adding an extra layer of enjoyment to restaurant exploration.
 
 # Table of contents
 
@@ -39,7 +40,7 @@ Then to display the results in a browser (tested on Chrome), go to: http://127.0
 
 To display the response to queries at back-end level:
 
-    curl http://127.0.0.1/:8002
+    curl http://127.0.0.1:8002/
 
 ## Technical description<a name="Technical-description"></a>
 All parts of the code are linked and run from dependencies built on docker with docker-compose. 
@@ -59,9 +60,23 @@ The language used is python. Flask is used to open a server for the back end. Th
 ### Front end<a name="Front-end"></a>
 The front-end is based on the results provided by the back-end, and fetches the results of queries on 8002. A simple display of these results is managed via an ajax request (jquery). Docker-compose allows the link from the back end and uses a nginx server for now. The final results from the front can be viewed via port 80.
 
-### Deployment<a name="Deployment"></a>
-Settings -> endpoints -> id noeud, http, private port (8002) + default
-When created, get Hidora adress, modify ajax request on server.
+## Deployment<a name="Deployment"></a>
+Hosting was on hidora.
+A docker-compose launch was configured. An endpoint is used to connect to the database (settings -> endpoints -> node id, http, private port (8002) + default). The generated address is used in config.js.
+Https has been activated via a self-signed certificate obtained from :
+
+    openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 \
+    -nodes -keyout menu-mystery.com.key -out menu-mystery.com.crt -subj "/CN=menu-mystery.com" \
+    -addext "subjectAltName=DNS:menu-mystery.com,DNS:*.menu-mystery.com,IP:185.169.94.223"
+
+Until the date of the contest, the application will be available via secure addresses. 
+First of all, you need to activate the database on your mobile, accepting to pass through firewalls (non-private connection, as the certificate is self-signed):
+
+    https://node173554-menumystery.sh2.hidora.net:8002/
+
+Then go to the application:
+
+    https://menumystery.sh2.hidora.net/
 
 ## License<a name="License"></a>
 
