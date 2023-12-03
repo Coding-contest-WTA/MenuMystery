@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY back/* /app/
 
-COPY build/back/menu-mystery.com.crt /app/menu-mystery.com.crt
-COPY build/back/menu-mystery.com.key /app/menu-mystery.com.key
+COPY build/menu-mystery.com.crt /app/menu-mystery.com.crt
+COPY build/menu-mystery.com.key /app/menu-mystery.com.key
 
 RUN pip install -r /app/requirements.txt
 

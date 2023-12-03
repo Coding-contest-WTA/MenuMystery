@@ -25,6 +25,10 @@ services:
     image: nginx:latest
     volumes:
       - ./front/:/usr/share/nginx/html
+      - ./build/menu-mystery.com.crt:/etc/ssl/menu-mystery.com.crt
+      - ./build/menu-mystery.com.key:/etc/ssl/menu-mystery.com.key
+      - ./build/front/menu-mystery.conf:/etc/nginx/conf.d/menu-mystery.conf
     ports:
       - "80:80"
+      - "443:443"
     restart: always
