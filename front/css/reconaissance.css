@@ -2,122 +2,10 @@ body {
     text-align: center;
     background-color: #ffffff;
 }
-#text_reco {
-    margin-top: 50px;
-}
+
 #videoContainer {
     position: relative;
     display:none;
-    border: 4mm ridge rgba(79, 43, 16, .6);
-    border-radius: 25px;
-    --stripe: 7px;
-    background: repeating-linear-gradient(45deg, #3a5035 0 var(--stripe), #30482b var(--stripe) calc(var(--stripe) * 2));
-    overflow: hidden;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 100px;
-}
-#video {
-    display: block;
-    margin: 0 auto;
-}
-#videoChop {
-    display: block;
-    margin: 0 auto;
-}
-#capturedImage {
-    display: none;
-}
-#captureButton {
-    margin-top: 20px;
-    background: transparent;
-    border: none;
-}
-#verifyButton {
-    margin-top: 20px;
-    background: transparent;
-    border: none;
-}
-#captureImage {
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    background-color: white;
-    border-radius: 25px;
-}
-#captureImage2 {
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    background-color: white;
-    border-radius: 25px;
-}
-#predictions {
-    margin-top: 20px;
-}
-#message {
-    margin-top: 20px;
-}
-#text_reco {
-    background-color: transparent;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    font-size: 35px;
-    margin-left: 60px;
-    margin-right: 60px;
-}
-#text_reco2 {
-    background-color: transparent;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    font-size: 35px;
-    margin-left: 60px;
-    margin-right: 60px;
-}
-#startButton {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 35px;
-    border: 4px dashed white;
-    font-weight: bold;
-    background-color: transparent;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-#startButtonChop {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 35px;
-    border: 4px dashed white;
-    font-weight: bold;
-    background-color: transparent;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-#predictions {
-  color: white;
-    font-size: 35px;
-}
-#resultMessages {
-  color: white;
-    font-size: 35px;
-    margin-top: 20px;
-}
-
-#baguetteContainerall {
-    display:none;
-}
-
-#baguetteContainer {
-    position: relative;
     border: 4mm ridge rgba(79, 43, 16, .6);
     border-radius: 25px;
     --stripe: 7px;
@@ -141,14 +29,42 @@ body {
     font-size: 25px;
     font-weight: bold;
 }
-#ouvrirReconnaissance {
-    font-size: 40px;
+#video {
+    display: block;
+    margin: 0 auto;
+}
+#message {
+  color: white;
+  font-size: 35px;
+  margin-top: 20px;
+}
+#baguettesInfos {
+    display:none;
+}
+
+.photoButton {
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+}
+.captureImage {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
     background-color: white;
     border-radius: 25px;
-    cursor: pointer;
-    font-family: 'Great Vibes', cursive;
 }
-#ouvrirChopsTrain {
+.text_reco {
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 35px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.selectButton {
     font-size: 40px;
     background-color: white;
     border-radius: 25px;

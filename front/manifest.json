@@ -5,6 +5,9 @@
   "display": "standalone",
   "background_color": "#f7dbf2",
   "theme_color": "#f7dbf2",
+  "permissions": [
+    "camera"
+  ],
   "icons": [
     {
       "src": "assets/images/icon.webp",

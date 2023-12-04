@@ -1,31 +1,13 @@
-window.startButtonElement = document.getElementById('startButtonChop');
-window.videoChopElement = document.getElementById('videoChop');
+window.videoChopElement = document.getElementById('video');
 window.canvasElement = document.getElementById('canvas');
 window.verifyButtonElement = document.getElementById('verifyButton');
-window.resultMessagesElement = document.getElementById('resultMessages');
+window.resultMessagesElement = document.getElementById('message');
 window.model;
 window.objectsPositions = {};
-
-window.startButtonElement.addEventListener('click', () => {
-    initiateCamera().then(() => {
-        window.verifyButtonElement.style.display = 'block'; // Show the verify button
-    });
-});
 
 window.verifyButtonElement.addEventListener('click', () => {
     checkPosition();
 });
-
-async function initiateCamera() {
-    try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        window.videoChopElement.srcObject = stream;
-        window.videoChopElement.style.display = 'block';
-        await window.videoChopElement.play();
-    } catch (error) {
-        console.error('Error accessing the camera:', error);
-    }
-}
 
 async function checkPosition() {
     if (!window.model) {

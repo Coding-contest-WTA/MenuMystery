@@ -1,15 +1,8 @@
 window.video = document.getElementById('video');
-window.startButton = document.getElementById('startButton');
 window.captureButton = document.getElementById('captureButton');
-window.capturedImage = document.getElementById('capturedImage');
-window.predictionsDiv = document.getElementById('predictions');
-window.messageDiv = document.getElementById('message');
-window.isObjectDetectionRunning = false;
+window.capturedImage = document.getElementById('canvas');
+window.predictionsDiv = document.getElementById('message');
 
-async function startCamera() {
-  const stream = await navigator.mediaDevices.getUserMedia({ 'video': true });
-  window.video.srcObject = stream;
-}
 
 async function runObjectDetection(imageElement) {
   const model = await cocoSsd.load();
@@ -23,21 +16,9 @@ async function runObjectDetection(imageElement) {
   }
 }
 
-window.startButton.addEventListener('click', () => {
-  startCamera();
-  window.isObjectDetectionRunning = true;
-});
 
 window.captureButton.addEventListener('click', () => {
   const context = window.capturedImage.getContext('2d');
   context.drawImage(window.video, 0, 0, window.capturedImage.width, window.capturedImage.height);
   runObjectDetection(window.capturedImage);
-});
-
-window.startButton.addEventListener('click', () => {
-  window.isObjectDetectionRunning = !window.isObjectDetectionRunning;
-});
-
-$(document).ready(function () {
-    autoChangeLanguage()
 });
