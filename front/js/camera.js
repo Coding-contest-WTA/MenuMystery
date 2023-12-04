@@ -8,16 +8,6 @@ var videoContainer = document.getElementById("videoContainer");
 var baguettesInfos = document.getElementById("baguettesInfos");
 var startedVideoContainer = false;
 
-/*async function initiateCamera() {
-    try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        window.videoChopElement.srcObject = stream;
-        window.videoChopElement.style.display = 'block';
-        await window.videoChopElement.play();
-    } catch (error) {
-        console.error('Error accessing the camera:', error);
-    }
-}*/
 async function startCamera() {
     try{
         const stream = await navigator.mediaDevices.getUserMedia({ 'video': true });
@@ -62,3 +52,35 @@ document.getElementById("ouvrirChopsTrain").addEventListener("click", function (
     chopsticks_text.style.display = ""; 
     resultMessagesElement.textContent = "";
 });
+
+let switchCamera1 = document.getElementById('switchCamera1');
+let switchCamera2 = document.getElementById('switchCamera2');
+let currentCamera = 'user'; // 'user' for front camera, 'environment' for rear camera
+
+// Check if there is more than one camera
+if (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
+    navigator.mediaDevices.enumerateDevices()
+        .then(devices => {
+            const videoDevices = devices.filter(device => device.kind === 'videoinput');
+            if (videoDevices.length > 1) {
+                // Si plusieurs caméras sont disponibles, affiche le bouton de bascule
+                switchCameraButton1.style.display = 'block';
+                switchCameraButton1.addEventListener('click', toggleCamera);
+                switchCameraButton2.style.display = 'block';
+                switchCameraButton2.addEventListener('click', toggleCamera);
+            }
+        })
+        .catch(error => console.error('Error enumerating video devices:', error));
+}
+
+function toggleCamera() {
+    currentCamera = (currentCamera === 'user') ? 'environment' : 'user';
+
+    navigator.mediaDevices.getUserMedia({
+        video: { facingMode: { exact: currentCamera } }
+    })
+    .then(stream => {
+        video.srcObject = stream;
+    })
+    .catch(error => console.error('Error switching camera:', error));
+}
