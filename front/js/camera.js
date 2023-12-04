@@ -39,6 +39,9 @@ document.getElementById("ouvrirReconnaissance").addEventListener("click", functi
     }
     baguettesInfos.style.display = "none"; 
 
+    chopsticks_button.style.backgroundColor = "white";
+    object_button.style.backgroundColor = "lightgrey";
+
     object_text.style.display = "";
     chopsticks_text.style.display = "none"; 
     resultMessagesElement.textContent = "";  
@@ -49,6 +52,9 @@ document.getElementById("ouvrirChopsTrain").addEventListener("click", function (
         initialOpening();
     }
     baguettesInfos.style.display = "block"; 
+
+    chopsticks_button.style.backgroundColor = "lightgrey";
+    object_button.style.backgroundColor = "white";
 
     object_text.style.display = "none";
     chopsticks_text.style.display = ""; 
