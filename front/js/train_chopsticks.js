@@ -6,7 +6,9 @@ window.model;
 window.objectsPositions = {};
 
 window.verifyButtonElement.addEventListener('click', () => {
-    checkPosition();
+    if (stream != null){
+        checkPosition();
+    }
 });
 
 async function checkPosition() {

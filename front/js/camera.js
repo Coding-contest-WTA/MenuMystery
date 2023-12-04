@@ -3,17 +3,21 @@ window.object_text = document.getElementById('text_reco1');
 window.chopsticks_text = document.getElementById('text_reco2');
 window.no_permission_text = document.getElementById('text_no_permission');
 window.resultMessagesElement = document.getElementById('message');
+window.object_button = document.getElementById("ouvrirReconnaissance");
+window.chopsticks_button = document.getElementById("ouvrirChopsTrain");
 window.isObjectDetectionRunning = false;
 
 var videoContainer = document.getElementById("videoContainer");
 var baguettesInfos = document.getElementById("baguettesInfos");
 var startedVideoContainer = false;
+var stream = null;
 
 async function startCamera() {
     try{
-        const stream = await navigator.mediaDevices.getUserMedia({ 'video': true });
+        stream = await navigator.mediaDevices.getUserMedia({ 'video': true });
         window.video.srcObject = stream;
         await window.video.play();
+        console.log(stream);
     } catch (error) {
         console.error('Error accessing the camera:', error);
         text_no_permission.style.display = "block";
@@ -33,7 +37,7 @@ function initialOpening() {
     window.isObjectDetectionRunning = true;
 }
 
-document.getElementById("ouvrirReconnaissance").addEventListener("click", function () {
+object_button.addEventListener("click", function () {
     if (!startedVideoContainer) {
         initialOpening();
     }
@@ -47,7 +51,7 @@ document.getElementById("ouvrirReconnaissance").addEventListener("click", functi
     resultMessagesElement.textContent = "";  
 });
 
-document.getElementById("ouvrirChopsTrain").addEventListener("click", function () {
+chopsticks_button.addEventListener("click", function () {
     if (!startedVideoContainer) {
         initialOpening();
     }

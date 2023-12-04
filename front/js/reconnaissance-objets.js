@@ -18,7 +18,9 @@ async function runObjectDetection(imageElement) {
 
 
 window.captureButton.addEventListener('click', () => {
-  const context = window.capturedImage.getContext('2d');
-  context.drawImage(window.video, 0, 0, window.capturedImage.width, window.capturedImage.height);
-  runObjectDetection(window.capturedImage);
+    if (stream != null){
+        const context = window.capturedImage.getContext('2d');
+        context.drawImage(window.video, 0, 0, window.capturedImage.width, window.capturedImage.height);
+        runObjectDetection(window.capturedImage);
+    }
 });
