@@ -41,6 +41,18 @@ body {
 #baguettesInfos {
     display:none;
 }
+#text_no_permission{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 35px;
+    border: 4px dashed white;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .photoButton {
     margin-top: 20px;

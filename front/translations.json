@@ -1,5 +1,6 @@
 {
   "en": {
+    "text_no_permission": "Please, allow access to the camera",
     "search_input": "Search...",
     "filter_type_price": "Filter",
     "filter_price": "Price",
@@ -43,8 +44,9 @@
     "signup_form_connexion_button": "Signup",
     "already_account_txt": "You have already an account?",
     "already_account_signup": "Signin"
-  },
+},
   "fr": {
+    "text_no_permission": "Vous devez autoriser l'accès à la caméra",
     "search_input": "Rechercher...",
     "filter_type_price": "Filtrer",
     "filter_price": "Prix",

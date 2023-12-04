@@ -1,6 +1,7 @@
 window.video = document.getElementById('video');
 window.object_text = document.getElementById('text_reco1');
 window.chopsticks_text = document.getElementById('text_reco2');
+window.no_permission_text = document.getElementById('text_no_permission');
 window.resultMessagesElement = document.getElementById('message');
 window.isObjectDetectionRunning = false;
 
@@ -15,6 +16,7 @@ async function startCamera() {
         await window.video.play();
     } catch (error) {
         console.error('Error accessing the camera:', error);
+        text_no_permission.style.display = "block";
     }
 }
 
