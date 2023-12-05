@@ -30,17 +30,23 @@ On Mac: https://docs.docker.com/desktop/install/mac-install/
 
 The dependencies are built and the application is launched via :
 
-    make launch-app
+```bash
+make launch-app
+```
 
 If necessary, containers and images can be cleaned via :
 
-    docker system prune -f -a
+```bash
+docker system prune -f -a
+```
 
 Then to display the results in a browser (tested on Chrome), go to: http://127.0.0.1/
 
 To display the response to queries at back-end level:
 
-    curl http://127.0.0.1:8002/
+```bash
+curl http://127.0.0.1:8002/
+```
 
 ## Technical description<a name="Technical-description"></a>
 All parts of the code are linked and run from dependencies built on docker with docker-compose. 
