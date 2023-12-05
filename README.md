@@ -69,14 +69,9 @@ Https has been activated via a self-signed certificate obtained from :
     -nodes -keyout menu-mystery.com.key -out menu-mystery.com.crt -subj "/CN=menu-mystery.com" \
     -addext "subjectAltName=DNS:menu-mystery.com,DNS:*.menu-mystery.com,IP:185.169.94.223"
 
-Until the date of the contest, the application will be available via secure addresses. 
-First of all, you need to activate the database on your mobile, accepting to pass through firewalls (non-private connection, as the certificate is self-signed):
+Until the date of the contest, the application will be available via a https address. You need to accept to pass through firewalls (non-private connection, as the certificate is self-signed):
 
-    https://node173554-menumystery.sh2.hidora.net:8002/
-
-Then go to the application:
-
-    https://menumystery.sh2.hidora.net/
+    https://node173554-menumystery.sh2.hidora.net/
 
 ## License<a name="License"></a>
 
